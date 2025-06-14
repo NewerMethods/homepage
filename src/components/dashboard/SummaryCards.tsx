@@ -1,8 +1,8 @@
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Leaf, Zap } from "lucide-react";
 import { IntensityCard } from "@/components/IntensityCard";
 import type { EnergyIntensityData } from "@/types";
+import TimeframeCard from "./TimeframeCard";
 
 interface SummaryCardsProps {
   intensityData: EnergyIntensityData;
@@ -25,15 +25,7 @@ const SummaryCards = ({ intensityData }: SummaryCardsProps) => {
         icon={Zap}
         color="text-yellow-400"
       />
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-sm font-medium">Data Timeframe</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-xs text-muted-foreground">From: {new Date(intensityData.from).toLocaleString()}</p>
-          <p className="text-xs text-muted-foreground">To: {new Date(intensityData.to).toLocaleString()}</p>
-        </CardContent>
-      </Card>
+      <TimeframeCard from={intensityData.from} to={intensityData.to} />
     </div>
   );
 };

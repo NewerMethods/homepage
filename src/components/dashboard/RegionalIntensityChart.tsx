@@ -1,7 +1,22 @@
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+} from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
 import type { EnergyRegionData } from "@/types";
+
+const chartConfig = {
+  intensity: {
+    label: "Intensity (gCO₂/kWh)",
+    color: "hsl(var(--primary))",
+  },
+} satisfies ChartConfig;
 
 interface RegionalIntensityChartProps {
     regionalData: EnergyRegionData[];
@@ -20,21 +35,33 @@ const RegionalIntensityChart = ({ regionalData }: RegionalIntensityChartProps) =
                 <CardDescription>Forecasted gCO₂/kWh by region.</CardDescription>
             </CardHeader>
             <CardContent>
-                <ResponsiveContainer width="100%" height={400}>
-                    <BarChart data={chartData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                        <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
-                        <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickLine={false} axisLine={false} />
-                        <Tooltip
-                            contentStyle={{
-                                background: "hsl(var(--background))",
-                                border: "1px solid hsl(var(--border))",
-                            }}
+                <ChartContainer config={chartConfig} className="h-[400px] w-full">
+                    <BarChart accessibilityLayer data={chartData}>
+                        <CartesianGrid vertical={false} />
+                        <XAxis
+                            dataKey="name"
+                            tickLine={false}
+                            tickMargin={10}
+                            axisLine={false}
+                            fontSize={12}
                         />
-                        <Legend />
-                        <Bar dataKey="intensity" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                        <YAxis
+                           tickLine={false}
+                           axisLine={false}
+                           fontSize={12}
+                        />
+                        <ChartTooltip
+                            cursor={false}
+                            content={<ChartTooltipContent indicator="dot" />}
+                        />
+                        <ChartLegend content={<ChartLegendContent />} />
+                        <Bar
+                            dataKey="intensity"
+                            fill="var(--color-intensity)"
+                            radius={4}
+                        />
                     </BarChart>
-                </ResponsiveContainer>
+                </ChartContainer>
             </CardContent>
         </Card>
     );
