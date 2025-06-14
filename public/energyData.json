@@ -1,28 +1,213 @@
 
 {
-  "nationalIntensityData": {
-    "from": "2025-06-14T12:00Z",
-    "to": "2025-06-14T12:30Z",
-    "intensity": {
-      "forecast": 150,
-      "actual": 155,
-      "index": "Moderate"
+  "data": [
+    {
+      "year": 2025,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 17, "electricity_generation": 22 },
+        { "type": "wind", "installed_capacity": 27, "electricity_generation": 81 },
+        { "type": "gas", "installed_capacity": 39, "electricity_generation": 155 }
+      ]
+    },
+    {
+      "year": 2026,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 19, "electricity_generation": 25 },
+        { "type": "wind", "installed_capacity": 29, "electricity_generation": 87 },
+        { "type": "gas", "installed_capacity": 38, "electricity_generation": 151 }
+      ]
+    },
+    {
+      "year": 2027,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 21, "electricity_generation": 28 },
+        { "type": "wind", "installed_capacity": 31, "electricity_generation": 94 },
+        { "type": "gas", "installed_capacity": 37, "electricity_generation": 146 }
+      ]
+    },
+    {
+      "year": 2028,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 24, "electricity_generation": 31 },
+        { "type": "wind", "installed_capacity": 34, "electricity_generation": 102 },
+        { "type": "gas", "installed_capacity": 35, "electricity_generation": 142 }
+      ]
+    },
+    {
+      "year": 2029,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 27, "electricity_generation": 35 },
+        { "type": "wind", "installed_capacity": 37, "electricity_generation": 110 },
+        { "type": "gas", "installed_capacity": 34, "electricity_generation": 137 }
+      ]
+    },
+    {
+      "year": 2030,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 30, "electricity_generation": 39 },
+        { "type": "wind", "installed_capacity": 40, "electricity_generation": 119 },
+        { "type": "gas", "installed_capacity": 33, "electricity_generation": 133 }
+      ]
+    },
+    {
+      "year": 2031,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 33, "electricity_generation": 43 },
+        { "type": "wind", "installed_capacity": 43, "electricity_generation": 129 },
+        { "type": "gas", "installed_capacity": 32, "electricity_generation": 129 }
+      ]
+    },
+    {
+      "year": 2032,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 37, "electricity_generation": 49 },
+        { "type": "wind", "installed_capacity": 46, "electricity_generation": 139 },
+        { "type": "gas", "installed_capacity": 31, "electricity_generation": 125 }
+      ]
+    },
+    {
+      "year": 2033,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 42, "electricity_generation": 54 },
+        { "type": "wind", "installed_capacity": 50, "electricity_generation": 150 },
+        { "type": "gas", "installed_capacity": 30, "electricity_generation": 122 }
+      ]
+    },
+    {
+      "year": 2034,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 47, "electricity_generation": 61 },
+        { "type": "wind", "installed_capacity": 54, "electricity_generation": 162 },
+        { "type": "gas", "installed_capacity": 29, "electricity_generation": 118 }
+      ]
+    },
+    {
+      "year": 2035,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 53, "electricity_generation": 68 },
+        { "type": "wind", "installed_capacity": 58, "electricity_generation": 175 },
+        { "type": "gas", "installed_capacity": 28, "electricity_generation": 114 }
+      ]
+    },
+    {
+      "year": 2036,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 59, "electricity_generation": 77 },
+        { "type": "wind", "installed_capacity": 63, "electricity_generation": 189 },
+        { "type": "gas", "installed_capacity": 27, "electricity_generation": 111 }
+      ]
+    },
+    {
+      "year": 2037,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 66, "electricity_generation": 86 },
+        { "type": "wind", "installed_capacity": 68, "electricity_generation": 204 },
+        { "type": "gas", "installed_capacity": 27, "electricity_generation": 108 }
+      ]
+    },
+    {
+      "year": 2038,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 74, "electricity_generation": 96 },
+        { "type": "wind", "installed_capacity": 73, "electricity_generation": 220 },
+        { "type": "gas", "installed_capacity": 26, "electricity_generation": 104 }
+      ]
+    },
+    {
+      "year": 2039,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 83, "electricity_generation": 108 },
+        { "type": "wind", "installed_capacity": 79, "electricity_generation": 237 },
+        { "type": "gas", "installed_capacity": 25, "electricity_generation": 101 }
+      ]
+    },
+    {
+      "year": 2040,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 93, "electricity_generation": 121 },
+        { "type": "wind", "installed_capacity": 85, "electricity_generation": 256 },
+        { "type": "gas", "installed_capacity": 24, "electricity_generation": 98 }
+      ]
+    },
+    {
+      "year": 2041,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 104, "electricity_generation": 135 },
+        { "type": "wind", "installed_capacity": 92, "electricity_generation": 277 },
+        { "type": "gas", "installed_capacity": 24, "electricity_generation": 95 }
+      ]
+    },
+    {
+      "year": 2042,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 117, "electricity_generation": 152 },
+        { "type": "wind", "installed_capacity": 100, "electricity_generation": 299 },
+        { "type": "gas", "installed_capacity": 23, "electricity_generation": 92 }
+      ]
+    },
+    {
+      "year": 2043,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 131, "electricity_generation": 170 },
+        { "type": "wind", "installed_capacity": 108, "electricity_generation": 323 },
+        { "type": "gas", "installed_capacity": 22, "electricity_generation": 90 }
+      ]
+    },
+    {
+      "year": 2044,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 146, "electricity_generation": 190 },
+        { "type": "wind", "installed_capacity": 116, "electricity_generation": 349 },
+        { "type": "gas", "installed_capacity": 22, "electricity_generation": 87 }
+      ]
+    },
+    {
+      "year": 2045,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 164, "electricity_generation": 213 },
+        { "type": "wind", "installed_capacity": 126, "electricity_generation": 377 },
+        { "type": "gas", "installed_capacity": 21, "electricity_generation": 84 }
+      ]
+    },
+    {
+      "year": 2046,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 184, "electricity_generation": 239 },
+        { "type": "wind", "installed_capacity": 136, "electricity_generation": 407 },
+        { "type": "gas", "installed_capacity": 20, "electricity_generation": 82 }
+      ]
+    },
+    {
+      "year": 2047,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 206, "electricity_generation": 267 },
+        { "type": "wind", "installed_capacity": 147, "electricity_generation": 440 },
+        { "type": "gas", "installed_capacity": 20, "electricity_generation": 79 }
+      ]
+    },
+    {
+      "year": 2048,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 230, "electricity_generation": 299 },
+        { "type": "wind", "installed_capacity": 158, "electricity_generation": 475 },
+        { "type": "gas", "installed_capacity": 19, "electricity_generation": 77 }
+      ]
+    },
+    {
+      "year": 2049,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 258, "electricity_generation": 335 },
+        { "type": "wind", "installed_capacity": 171, "electricity_generation": 513 },
+        { "type": "gas", "installed_capacity": 18, "electricity_generation": 75 }
+      ]
+    },
+    {
+      "year": 2050,
+      "technologies": [
+        { "type": "solar", "installed_capacity": 289, "electricity_generation": 376 },
+        { "type": "wind", "installed_capacity": 185, "electricity_generation": 554 },
+        { "type": "gas", "installed_capacity": 18, "electricity_generation": 72 }
+      ]
     }
-  },
-  "regionalIntensityData": [
-    { "regionid": 1, "dnoregion": "North Scotland", "shortname": "N Scotland", "intensity": { "forecast": 50, "index": "low" }},
-    { "regionid": 2, "dnoregion": "South Scotland", "shortname": "S Scotland", "intensity": { "forecast": 65, "index": "low" }},
-    { "regionid": 3, "dnoregion": "North West England", "shortname": "NW England", "intensity": { "forecast": 130, "index": "moderate" }},
-    { "regionid": 4, "dnoregion": "North East England", "shortname": "NE England", "intensity": { "forecast": 140, "index": "moderate" }},
-    { "regionid": 5, "dnoregion": "Yorkshire", "shortname": "Yorkshire", "intensity": { "forecast": 135, "index": "moderate" }},
-    { "regionid": 6, "dnoregion": "East Midlands", "shortname": "E Midlands", "intensity": { "forecast": 160, "index": "high" }},
-    { "regionid": 7, "dnoregion": "West Midlands", "shortname": "W Midlands", "intensity": { "forecast": 155, "index": "high" }},
-    { "regionid": 8, "dnoregion": "East England", "shortname": "E England", "intensity": { "forecast": 170, "index": "high" }},
-    { "regionid": 9, "dnoregion": "South West England", "shortname": "SW England", "intensity": { "forecast": 110, "index": "moderate" }},
-    { "regionid": 10, "dnoregion": "South England", "shortname": "S England", "intensity": { "forecast": 145, "index": "moderate" }},
-    { "regionid": 11, "dnoregion": "London", "shortname": "London", "intensity": { "forecast": 180, "index": "high" }},
-    { "regionid": 12, "dnoregion": "South East England", "shortname": "SE England", "intensity": { "forecast": 165, "index": "high" }},
-    { "regionid": 13, "dnoregion": "South Wales", "shortname": "S Wales", "intensity": { "forecast": 125, "index": "moderate" }},
-    { "regionid": 14, "dnoregion": "North Wales", "shortname": "N Wales", "intensity": { "forecast": 115, "index": "moderate" }}
   ]
 }
