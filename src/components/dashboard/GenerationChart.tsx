@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import type { YearlyEnergyData, TechnologyType, Metric } from '@/types';
@@ -23,7 +23,7 @@ const METRIC_LABELS: { [key in Metric]: { name: string, unit: string } } = {
 
 const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) => {
 
-  const chartData = data.map(yearlyData => {
+  const chartData = useMemo(() => data.map(yearlyData => {
     const record: { [key: string]: number | string } = { year: yearlyData.year };
     yearlyData.technologies.forEach(techData => {
       if (technologies.includes(techData.type)) {
@@ -33,7 +33,7 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
       }
     });
     return record;
-  });
+  }), [data, metrics, technologies]);
 
   const yAxis1Metric = metrics[0];
   const yAxis2Metric = metrics[1];
