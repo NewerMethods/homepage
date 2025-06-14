@@ -1,0 +1,28 @@
+
+{
+  "nationalIntensityData": {
+    "from": "2025-06-14T12:00Z",
+    "to": "2025-06-14T12:30Z",
+    "intensity": {
+      "forecast": 150,
+      "actual": 155,
+      "index": "Moderate"
+    }
+  },
+  "regionalIntensityData": [
+    { "regionid": 1, "dnoregion": "North Scotland", "shortname": "N Scotland", "intensity": { "forecast": 50, "index": "low" }},
+    { "regionid": 2, "dnoregion": "South Scotland", "shortname": "S Scotland", "intensity": { "forecast": 65, "index": "low" }},
+    { "regionid": 3, "dnoregion": "North West England", "shortname": "NW England", "intensity": { "forecast": 130, "index": "moderate" }},
+    { "regionid": 4, "dnoregion": "North East England", "shortname": "NE England", "intensity": { "forecast": 140, "index": "moderate" }},
+    { "regionid": 5, "dnoregion": "Yorkshire", "shortname": "Yorkshire", "intensity": { "forecast": 135, "index": "moderate" }},
+    { "regionid": 6, "dnoregion": "East Midlands", "shortname": "E Midlands", "intensity": { "forecast": 160, "index": "high" }},
+    { "regionid": 7, "dnoregion": "West Midlands", "shortname": "W Midlands", "intensity": { "forecast": 155, "index": "high" }},
+    { "regionid": 8, "dnoregion": "East England", "shortname": "E England", "intensity": { "forecast": 170, "index": "high" }},
+    { "regionid": 9, "dnoregion": "South West England", "shortname": "SW England", "intensity": { "forecast": 110, "index": "moderate" }},
+    { "regionid": 10, "dnoregion": "South England", "shortname": "S England", "intensity": { "forecast": 145, "index": "moderate" }},
+    { "regionid": 11, "dnoregion": "London", "shortname": "London", "intensity": { "forecast": 180, "index": "high" }},
+    { "regionid": 12, "dnoregion": "South East England", "shortname": "SE England", "intensity": { "forecast": 165, "index": "high" }},
+    { "regionid": 13, "dnoregion": "South Wales", "shortname": "S Wales", "intensity": { "forecast": 125, "index": "moderate" }},
+    { "regionid": 14, "dnoregion": "North Wales", "shortname": "N Wales", "intensity": { "forecast": 115, "index": "moderate" }}
+  ]
+}

@@ -3,8 +3,9 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Zap, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useQuery } from "@tanstack/react-query";
 import type { EnergyIntensityData, EnergyRegionData } from "@/types";
-import { nationalIntensityData, regionalIntensityData } from "@/data/energyData";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const IntensityCard = ({ title, value, unit, icon: Icon, color }) => (
   <Card>
@@ -20,8 +21,50 @@ const IntensityCard = ({ title, value, unit, icon: Icon, color }) => (
 );
 
 const Dashboard = () => {
-  const intensity: EnergyIntensityData = nationalIntensityData;
-  const regional: EnergyRegionData[] = regionalIntensityData;
+  const fetchEnergyData = async (): Promise<{ nationalIntensityData: EnergyIntensityData; regionalIntensityData: EnergyRegionData[] }> => {
+    const response = await fetch('/energyData.json');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  };
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['energyData'],
+    queryFn: fetchEnergyData
+  });
+
+  if (isLoading) {
+    return (
+      <div className="space-y-8">
+        <header className="mb-12">
+          <Skeleton className="h-12 w-3/4 mb-2" />
+          <Skeleton className="h-6 w-1/2" />
+        </header>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <Skeleton className="h-[108px]" />
+          <Skeleton className="h-[108px]" />
+          <Skeleton className="h-[108px]" />
+        </div>
+        <Card>
+          <CardHeader>
+            <Skeleton className="h-6 w-1/4 mb-2" />
+            <Skeleton className="h-4 w-1/3" />
+          </CardHeader>
+          <CardContent>
+            <Skeleton className="w-full h-[400px]" />
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="text-red-500">Error loading energy data: {error.message}</div>;
+  }
+  
+  const intensity = data!.nationalIntensityData;
+  const regional = data!.regionalIntensityData;
 
   const chartData = regional.map(r => ({
     name: r.shortname,
