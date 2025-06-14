@@ -1,11 +1,11 @@
-
 export type TechnologyType = 'solar' | 'wind' | 'gas' | 'hydro';
-export type Metric = 'installed_capacity' | 'electricity_generation';
+export type Metric = 'installed_capacity' | 'electricity_generation' | 'emissions';
 
 export interface TechnologyData {
   type: TechnologyType;
   installed_capacity: number; // in GW
   electricity_generation: number; // in TWh
+  emissions: number; // in MtCO2e
 }
 
 export interface YearlyEnergyData {

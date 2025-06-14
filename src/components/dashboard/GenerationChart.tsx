@@ -20,6 +20,7 @@ const COLORS: { [key in TechnologyType]: string } = {
 const METRIC_LABELS: { [key in Metric]: { name: string, unit: string } } = {
   installed_capacity: { name: 'Capacity', unit: 'GW' },
   electricity_generation: { name: 'Generation', unit: 'TWh' },
+  emissions: { name: 'Emissions', unit: 'MtCO2e' },
 };
 
 const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) => {

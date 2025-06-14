@@ -4,235 +4,235 @@
     {
       "year": 2025,
       "technologies": [
-        { "type": "solar", "installed_capacity": 17, "electricity_generation": 22 },
-        { "type": "wind", "installed_capacity": 27, "electricity_generation": 81 },
-        { "type": "gas", "installed_capacity": 39, "electricity_generation": 155 },
-        { "type": "hydro", "installed_capacity": 25, "electricity_generation": 60 }
+        { "type": "solar", "installed_capacity": 17, "electricity_generation": 22, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 27, "electricity_generation": 81, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 39, "electricity_generation": 155, "emissions": 70 },
+        { "type": "hydro", "installed_capacity": 25, "electricity_generation": 60, "emissions": 0 }
       ]
     },
     {
       "year": 2026,
       "technologies": [
-        { "type": "solar", "installed_capacity": 19, "electricity_generation": 25 },
-        { "type": "wind", "installed_capacity": 29, "electricity_generation": 87 },
-        { "type": "gas", "installed_capacity": 38, "electricity_generation": 151 },
-        { "type": "hydro", "installed_capacity": 25, "electricity_generation": 61 }
+        { "type": "solar", "installed_capacity": 19, "electricity_generation": 25, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 29, "electricity_generation": 87, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 38, "electricity_generation": 151, "emissions": 68 },
+        { "type": "hydro", "installed_capacity": 25, "electricity_generation": 61, "emissions": 0 }
       ]
     },
     {
       "year": 2027,
       "technologies": [
-        { "type": "solar", "installed_capacity": 21, "electricity_generation": 28 },
-        { "type": "wind", "installed_capacity": 31, "electricity_generation": 94 },
-        { "type": "gas", "installed_capacity": 37, "electricity_generation": 146 },
-        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 62 }
+        { "type": "solar", "installed_capacity": 21, "electricity_generation": 28, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 31, "electricity_generation": 94, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 37, "electricity_generation": 146, "emissions": 66 },
+        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 62, "emissions": 0 }
       ]
     },
     {
       "year": 2028,
       "technologies": [
-        { "type": "solar", "installed_capacity": 24, "electricity_generation": 31 },
-        { "type": "wind", "installed_capacity": 34, "electricity_generation": 102 },
-        { "type": "gas", "installed_capacity": 35, "electricity_generation": 142 },
-        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 63 }
+        { "type": "solar", "installed_capacity": 24, "electricity_generation": 31, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 34, "electricity_generation": 102, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 35, "electricity_generation": 142, "emissions": 64 },
+        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 63, "emissions": 0 }
       ]
     },
     {
       "year": 2029,
       "technologies": [
-        { "type": "solar", "installed_capacity": 27, "electricity_generation": 35 },
-        { "type": "wind", "installed_capacity": 37, "electricity_generation": 110 },
-        { "type": "gas", "installed_capacity": 34, "electricity_generation": 137 },
-        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 62 }
+        { "type": "solar", "installed_capacity": 27, "electricity_generation": 35, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 37, "electricity_generation": 110, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 34, "electricity_generation": 137, "emissions": 62 },
+        { "type": "hydro", "installed_capacity": 26, "electricity_generation": 62, "emissions": 0 }
       ]
     },
     {
       "year": 2030,
       "technologies": [
-        { "type": "solar", "installed_capacity": 30, "electricity_generation": 39 },
-        { "type": "wind", "installed_capacity": 40, "electricity_generation": 119 },
-        { "type": "gas", "installed_capacity": 33, "electricity_generation": 133 },
-        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 65 }
+        { "type": "solar", "installed_capacity": 30, "electricity_generation": 39, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 40, "electricity_generation": 119, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 33, "electricity_generation": 133, "emissions": 60 },
+        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 65, "emissions": 0 }
       ]
     },
     {
       "year": 2031,
       "technologies": [
-        { "type": "solar", "installed_capacity": 33, "electricity_generation": 43 },
-        { "type": "wind", "installed_capacity": 43, "electricity_generation": 129 },
-        { "type": "gas", "installed_capacity": 32, "electricity_generation": 129 },
-        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 66 }
+        { "type": "solar", "installed_capacity": 33, "electricity_generation": 43, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 43, "electricity_generation": 129, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 32, "electricity_generation": 129, "emissions": 58 },
+        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 66, "emissions": 0 }
       ]
     },
     {
       "year": 2032,
       "technologies": [
-        { "type": "solar", "installed_capacity": 37, "electricity_generation": 49 },
-        { "type": "wind", "installed_capacity": 46, "electricity_generation": 139 },
-        { "type": "gas", "installed_capacity": 31, "electricity_generation": 125 },
-        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 65 }
+        { "type": "solar", "installed_capacity": 37, "electricity_generation": 49, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 46, "electricity_generation": 139, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 31, "electricity_generation": 125, "emissions": 56 },
+        { "type": "hydro", "installed_capacity": 27, "electricity_generation": 65, "emissions": 0 }
       ]
     },
     {
       "year": 2033,
       "technologies": [
-        { "type": "solar", "installed_capacity": 42, "electricity_generation": 54 },
-        { "type": "wind", "installed_capacity": 50, "electricity_generation": 150 },
-        { "type": "gas", "installed_capacity": 30, "electricity_generation": 122 },
-        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 68 }
+        { "type": "solar", "installed_capacity": 42, "electricity_generation": 54, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 50, "electricity_generation": 150, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 30, "electricity_generation": 122, "emissions": 55 },
+        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 68, "emissions": 0 }
       ]
     },
     {
       "year": 2034,
       "technologies": [
-        { "type": "solar", "installed_capacity": 47, "electricity_generation": 61 },
-        { "type": "wind", "installed_capacity": 54, "electricity_generation": 162 },
-        { "type": "gas", "installed_capacity": 29, "electricity_generation": 118 },
-        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 69 }
+        { "type": "solar", "installed_capacity": 47, "electricity_generation": 61, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 54, "electricity_generation": 162, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 29, "electricity_generation": 118, "emissions": 53 },
+        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 69, "emissions": 0 }
       ]
     },
     {
       "year": 2035,
       "technologies": [
-        { "type": "solar", "installed_capacity": 53, "electricity_generation": 68 },
-        { "type": "wind", "installed_capacity": 58, "electricity_generation": 175 },
-        { "type": "gas", "installed_capacity": 28, "electricity_generation": 114 },
-        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 68 }
+        { "type": "solar", "installed_capacity": 53, "electricity_generation": 68, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 58, "electricity_generation": 175, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 28, "electricity_generation": 114, "emissions": 51 },
+        { "type": "hydro", "installed_capacity": 28, "electricity_generation": 68, "emissions": 0 }
       ]
     },
     {
       "year": 2036,
       "technologies": [
-        { "type": "solar", "installed_capacity": 59, "electricity_generation": 77 },
-        { "type": "wind", "installed_capacity": 63, "electricity_generation": 189 },
-        { "type": "gas", "installed_capacity": 27, "electricity_generation": 111 },
-        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 70 }
+        { "type": "solar", "installed_capacity": 59, "electricity_generation": 77, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 63, "electricity_generation": 189, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 27, "electricity_generation": 111, "emissions": 50 },
+        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 70, "emissions": 0 }
       ]
     },
     {
       "year": 2037,
       "technologies": [
-        { "type": "solar", "installed_capacity": 66, "electricity_generation": 86 },
-        { "type": "wind", "installed_capacity": 68, "electricity_generation": 204 },
-        { "type": "gas", "installed_capacity": 27, "electricity_generation": 108 },
-        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 71 }
+        { "type": "solar", "installed_capacity": 66, "electricity_generation": 86, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 68, "electricity_generation": 204, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 27, "electricity_generation": 108, "emissions": 49 },
+        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 71, "emissions": 0 }
       ]
     },
     {
       "year": 2038,
       "technologies": [
-        { "type": "solar", "installed_capacity": 74, "electricity_generation": 96 },
-        { "type": "wind", "installed_capacity": 73, "electricity_generation": 220 },
-        { "type": "gas", "installed_capacity": 26, "electricity_generation": 104 },
-        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 70 }
+        { "type": "solar", "installed_capacity": 74, "electricity_generation": 96, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 73, "electricity_generation": 220, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 26, "electricity_generation": 104, "emissions": 47 },
+        { "type": "hydro", "installed_capacity": 29, "electricity_generation": 70, "emissions": 0 }
       ]
     },
     {
       "year": 2039,
       "technologies": [
-        { "type": "solar", "installed_capacity": 83, "electricity_generation": 108 },
-        { "type": "wind", "installed_capacity": 79, "electricity_generation": 237 },
-        { "type": "gas", "installed_capacity": 25, "electricity_generation": 101 },
-        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 73 }
+        { "type": "solar", "installed_capacity": 83, "electricity_generation": 108, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 79, "electricity_generation": 237, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 25, "electricity_generation": 101, "emissions": 45 },
+        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 73, "emissions": 0 }
       ]
     },
     {
       "year": 2040,
       "technologies": [
-        { "type": "solar", "installed_capacity": 93, "electricity_generation": 121 },
-        { "type": "wind", "installed_capacity": 85, "electricity_generation": 256 },
-        { "type": "gas", "installed_capacity": 24, "electricity_generation": 98 },
-        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 74 }
+        { "type": "solar", "installed_capacity": 93, "electricity_generation": 121, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 85, "electricity_generation": 256, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 24, "electricity_generation": 98, "emissions": 44 },
+        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 74, "emissions": 0 }
       ]
     },
     {
       "year": 2041,
       "technologies": [
-        { "type": "solar", "installed_capacity": 104, "electricity_generation": 135 },
-        { "type": "wind", "installed_capacity": 92, "electricity_generation": 277 },
-        { "type": "gas", "installed_capacity": 24, "electricity_generation": 95 },
-        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 73 }
+        { "type": "solar", "installed_capacity": 104, "electricity_generation": 135, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 92, "electricity_generation": 277, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 24, "electricity_generation": 95, "emissions": 43 },
+        { "type": "hydro", "installed_capacity": 30, "electricity_generation": 73, "emissions": 0 }
       ]
     },
     {
       "year": 2042,
       "technologies": [
-        { "type": "solar", "installed_capacity": 117, "electricity_generation": 152 },
-        { "type": "wind", "installed_capacity": 100, "electricity_generation": 299 },
-        { "type": "gas", "installed_capacity": 23, "electricity_generation": 92 },
-        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 76 }
+        { "type": "solar", "installed_capacity": 117, "electricity_generation": 152, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 100, "electricity_generation": 299, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 23, "electricity_generation": 92, "emissions": 41 },
+        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 76, "emissions": 0 }
       ]
     },
     {
       "year": 2043,
       "technologies": [
-        { "type": "solar", "installed_capacity": 131, "electricity_generation": 170 },
-        { "type": "wind", "installed_capacity": 108, "electricity_generation": 323 },
-        { "type": "gas", "installed_capacity": 22, "electricity_generation": 90 },
-        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 77 }
+        { "type": "solar", "installed_capacity": 131, "electricity_generation": 170, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 108, "electricity_generation": 323, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 22, "electricity_generation": 90, "emissions": 40 },
+        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 77, "emissions": 0 }
       ]
     },
     {
       "year": 2044,
       "technologies": [
-        { "type": "solar", "installed_capacity": 146, "electricity_generation": 190 },
-        { "type": "wind", "installed_capacity": 116, "electricity_generation": 349 },
-        { "type": "gas", "installed_capacity": 22, "electricity_generation": 87 },
-        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 75 }
+        { "type": "solar", "installed_capacity": 146, "electricity_generation": 190, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 116, "electricity_generation": 349, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 22, "electricity_generation": 87, "emissions": 39 },
+        { "type": "hydro", "installed_capacity": 31, "electricity_generation": 75, "emissions": 0 }
       ]
     },
     {
       "year": 2045,
       "technologies": [
-        { "type": "solar", "installed_capacity": 164, "electricity_generation": 213 },
-        { "type": "wind", "installed_capacity": 126, "electricity_generation": 377 },
-        { "type": "gas", "installed_capacity": 21, "electricity_generation": 84 },
-        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 78 }
+        { "type": "solar", "installed_capacity": 164, "electricity_generation": 213, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 126, "electricity_generation": 377, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 21, "electricity_generation": 84, "emissions": 38 },
+        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 78, "emissions": 0 }
       ]
     },
     {
       "year": 2046,
       "technologies": [
-        { "type": "solar", "installed_capacity": 184, "electricity_generation": 239 },
-        { "type": "wind", "installed_capacity": 136, "electricity_generation": 407 },
-        { "type": "gas", "installed_capacity": 20, "electricity_generation": 82 },
-        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 79 }
+        { "type": "solar", "installed_capacity": 184, "electricity_generation": 239, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 136, "electricity_generation": 407, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 20, "electricity_generation": 82, "emissions": 37 },
+        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 79, "emissions": 0 }
       ]
     },
     {
       "year": 2047,
       "technologies": [
-        { "type": "solar", "installed_capacity": 206, "electricity_generation": 267 },
-        { "type": "wind", "installed_capacity": 147, "electricity_generation": 440 },
-        { "type": "gas", "installed_capacity": 20, "electricity_generation": 79 },
-        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 78 }
+        { "type": "solar", "installed_capacity": 206, "electricity_generation": 267, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 147, "electricity_generation": 440, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 20, "electricity_generation": 79, "emissions": 36 },
+        { "type": "hydro", "installed_capacity": 32, "electricity_generation": 78, "emissions": 0 }
       ]
     },
     {
       "year": 2048,
       "technologies": [
-        { "type": "solar", "installed_capacity": 230, "electricity_generation": 299 },
-        { "type": "wind", "installed_capacity": 158, "electricity_generation": 475 },
-        { "type": "gas", "installed_capacity": 19, "electricity_generation": 77 },
-        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 81 }
+        { "type": "solar", "installed_capacity": 230, "electricity_generation": 299, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 158, "electricity_generation": 475, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 19, "electricity_generation": 77, "emissions": 35 },
+        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 81, "emissions": 0 }
       ]
     },
     {
       "year": 2049,
       "technologies": [
-        { "type": "solar", "installed_capacity": 258, "electricity_generation": 335 },
-        { "type": "wind", "installed_capacity": 171, "electricity_generation": 513 },
-        { "type": "gas", "installed_capacity": 18, "electricity_generation": 75 },
-        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 82 }
+        { "type": "solar", "installed_capacity": 258, "electricity_generation": 335, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 171, "electricity_generation": 513, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 18, "electricity_generation": 75, "emissions": 34 },
+        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 82, "emissions": 0 }
       ]
     },
     {
       "year": 2050,
       "technologies": [
-        { "type": "solar", "installed_capacity": 289, "electricity_generation": 376 },
-        { "type": "wind", "installed_capacity": 185, "electricity_generation": 554 },
-        { "type": "gas", "installed_capacity": 18, "electricity_generation": 72 },
-        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 80 }
+        { "type": "solar", "installed_capacity": 289, "electricity_generation": 376, "emissions": 0 },
+        { "type": "wind", "installed_capacity": 185, "electricity_generation": 554, "emissions": 0 },
+        { "type": "gas", "installed_capacity": 18, "electricity_generation": 72, "emissions": 32 },
+        { "type": "hydro", "installed_capacity": 33, "electricity_generation": 80, "emissions": 0 }
       ]
     }
   ],

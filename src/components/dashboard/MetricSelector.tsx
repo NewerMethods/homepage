@@ -19,6 +19,7 @@ interface MetricSelectorProps {
 const METRICS: { key: Metric; label:string }[] = [
     { key: 'electricity_generation', label: 'Electricity Generation (TWh)' },
     { key: 'installed_capacity', label: 'Installed Capacity (GW)' },
+    { key: 'emissions', label: 'Emissions (MtCO2e)' },
 ];
 
 const MetricSelector = ({ selectedMetrics, onMetricChange }: MetricSelectorProps) => {
