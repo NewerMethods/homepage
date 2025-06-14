@@ -20,6 +20,7 @@ const TECHNOLOGIES: { key: TechnologyType; label: string }[] = [
     { key: 'solar', label: 'Solar' },
     { key: 'wind', label: 'Wind' },
     { key: 'gas', label: 'Gas' },
+    { key: 'hydro', label: 'Hydro' },
 ];
 
 const TechnologySelector = ({ selectedTechnologies, onTechnologyChange }: TechnologySelectorProps) => {

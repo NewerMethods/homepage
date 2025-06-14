@@ -1,3 +1,5 @@
+import { SubstackPost } from "@/types";
+
 export interface SubstackPost {
   title: string;
   pubDate: string;
@@ -15,7 +17,7 @@ export interface SubstackPost {
   categories: string[];
 }
 
-export type TechnologyType = 'solar' | 'wind' | 'gas';
+export type TechnologyType = 'solar' | 'wind' | 'gas' | 'hydro';
 export type Metric = 'installed_capacity' | 'electricity_generation';
 
 export interface TechnologyData {

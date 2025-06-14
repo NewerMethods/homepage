@@ -14,6 +14,7 @@ const COLORS: { [key in TechnologyType]: string } = {
   solar: '#FFC300',
   wind: '#00A8E8',
   gas: '#8D99AE',
+  hydro: '#4CAF50',
 };
 
 const METRIC_LABELS: { [key in Metric]: { name: string, unit: string } } = {

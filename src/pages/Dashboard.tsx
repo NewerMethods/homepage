@@ -11,7 +11,7 @@ import type { TechnologyType, Metric } from '@/types';
 
 const Dashboard = () => {
   const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>(['electricity_generation']);
-  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(['solar', 'wind', 'gas']);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(['solar', 'wind', 'gas', 'hydro']);
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["energyData"],
