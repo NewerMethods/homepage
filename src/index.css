@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,7 +27,7 @@
   }
 
   .dark {
-    --background: 225 21% 6%; /* Deep Blue-Gray */
+    --background: 222 47% 11%;
     --foreground: 210 20% 98%; /* Almost White */
     --card: 225 21% 9%; /* Slightly lighter card background */
     --card-foreground: 210 20% 98%;
