@@ -7,7 +7,10 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { RectangleHorizontal } from "lucide-react";
+import { Menu, RectangleHorizontal } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -17,6 +20,8 @@ const navItems = [
 ];
 
 export function AppHeader() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -43,6 +48,34 @@ export function AppHeader() {
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
+          <div className="md:hidden">
+            <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <DrawerTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Toggle Menu">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <div className="p-4 pt-8">
+                  <nav className="grid gap-4">
+                    {navItems.map((item) => (
+                      <NavLink
+                        key={item.label}
+                        to={item.href}
+                        end
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={({ isActive }) =>
+                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground"}`
+                        }
+                      >
+                        {item.label}
+                      </NavLink>
+                    ))}
+                  </nav>
+                </div>
+              </DrawerContent>
+            </Drawer>
+          </div>
         </div>
       </div>
     </header>
