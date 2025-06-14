@@ -1,4 +1,3 @@
-
 export interface SubstackPost {
   title: string;
   pubDate: string;
@@ -16,22 +15,16 @@ export interface SubstackPost {
   categories: string[];
 }
 
-export interface EnergyIntensityData {
-  from: string;
-  to: string;
-  intensity: {
-    forecast: number;
-    actual: number;
-    index: string;
-  };
+export type TechnologyType = 'solar' | 'wind' | 'gas';
+export type Metric = 'installed_capacity' | 'electricity_generation';
+
+export interface TechnologyData {
+  type: TechnologyType;
+  installed_capacity: number; // in GW
+  electricity_generation: number; // in TWh
 }
 
-export interface EnergyRegionData {
-  regionid: number;
-  dnoregion: string;
-  shortname: string;
-  intensity: {
-    forecast: number;
-    index: string;
-  };
+export interface YearlyEnergyData {
+  year: number;
+  technologies: TechnologyData[];
 }

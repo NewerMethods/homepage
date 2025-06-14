@@ -1,13 +1,18 @@
 
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { fetchEnergyData } from "@/services/energyApi";
 import DashboardSkeleton from "@/components/dashboard/DashboardSkeleton";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import SummaryCards from "@/components/dashboard/SummaryCards";
-import RegionalIntensityChart from "@/components/dashboard/RegionalIntensityChart";
+import DashboardControls from "@/components/dashboard/DashboardControls";
+import GenerationChart from "@/components/dashboard/GenerationChart";
+import type { TechnologyType, Metric } from '@/types';
 
 const Dashboard = () => {
+  const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>(['electricity_generation']);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(['solar', 'wind', 'gas']);
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["energyData"],
     queryFn: fetchEnergyData,
@@ -33,8 +38,19 @@ const Dashboard = () => {
       className="space-y-8"
     >
       <DashboardHeader />
-      <SummaryCards intensityData={data.nationalIntensityData} />
-      <RegionalIntensityChart regionalData={data.regionalIntensityData} />
+      <DashboardControls
+        selectedMetrics={selectedMetrics}
+        setSelectedMetrics={setSelectedMetrics}
+        selectedTechnologies={selectedTechnologies}
+        setSelectedTechnologies={setSelectedTechnologies}
+      />
+      {data && (
+        <GenerationChart
+          data={data.data}
+          metrics={selectedMetrics}
+          technologies={selectedTechnologies}
+        />
+      )}
     </motion.div>
   );
 };

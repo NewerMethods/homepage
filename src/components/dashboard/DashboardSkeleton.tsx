@@ -8,10 +8,9 @@ const DashboardSkeleton = () => (
         <Skeleton className="h-12 w-3/4 mb-2" />
         <Skeleton className="h-6 w-1/2" />
       </header>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <Skeleton className="h-[108px]" />
-        <Skeleton className="h-[108px]" />
-        <Skeleton className="h-[108px]" />
+      <div className="flex flex-wrap gap-4">
+        <Skeleton className="h-10 w-40" />
+        <Skeleton className="h-10 w-48" />
       </div>
       <Card>
         <CardHeader>
