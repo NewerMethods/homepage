@@ -1,12 +1,12 @@
 
 import { Outlet } from "react-router-dom";
-import { AppSidebar } from "./AppSidebar";
+import { AppHeader } from "./AppHeader";
 
 const Layout = () => {
   return (
-    <div className="flex min-h-screen bg-background">
-      <AppSidebar />
-      <main className="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12">
+    <div className="flex min-h-screen flex-col bg-background">
+      <AppHeader />
+      <main className="flex-1 container py-4 md:py-8 lg:py-12">
         <Outlet />
       </main>
     </div>
