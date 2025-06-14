@@ -1,6 +1,6 @@
 
 import React, { useMemo } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import type { YearlyEnergyData, TechnologyType, Metric } from '@/types';
 
@@ -60,13 +60,27 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
       <CardContent>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
+            <XAxis
+              dataKey="year"
+              axisLine={{ stroke: 'hsl(var(--border))' }}
+              tickLine={{ stroke: 'hsl(var(--border))' }}
+            />
             {yAxis1Metric && (
-              <YAxis yAxisId="left" unit={` ${METRIC_LABELS[yAxis1Metric].unit}`} />
+              <YAxis
+                yAxisId="left"
+                unit={` ${METRIC_LABELS[yAxis1Metric].unit}`}
+                axisLine={{ stroke: 'hsl(var(--border))' }}
+                tickLine={{ stroke: 'hsl(var(--border))' }}
+              />
             )}
             {yAxis2Metric && (
-              <YAxis yAxisId="right" orientation="right" unit={` ${METRIC_LABELS[yAxis2Metric].unit}`} />
+              <YAxis
+                yAxisId="right"
+                orientation="right"
+                unit={` ${METRIC_LABELS[yAxis2Metric].unit}`}
+                axisLine={{ stroke: 'hsl(var(--border))' }}
+                tickLine={{ stroke: 'hsl(var(--border))' }}
+              />
             )}
             <Tooltip />
             <Legend />
