@@ -1,4 +1,3 @@
-
 import React, { useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
@@ -61,7 +60,7 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={chartData} margin={{ top: 20, right: yAxis2Metric ? 60 : 30, left: 20, bottom: 40 }}>
+          <LineChart data={chartData} margin={{ top: 30, right: yAxis2Metric ? 60 : 30, left: 20, bottom: 40 }}>
             <XAxis
               dataKey="year"
               axisLine={{ stroke: 'hsl(var(--border))' }}
@@ -74,7 +73,8 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
                 tickLine={{ stroke: 'hsl(var(--border))' }}
                 label={{
                   value: `(${METRIC_LABELS[yAxis1Metric].unit})`,
-                  position: 'insideTopLeft',
+                  position: 'top',
+                  dy: -15,
                   style: { textAnchor: 'start', fill: 'hsl(var(--muted-foreground))' },
                 }}
               />
@@ -87,7 +87,8 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
                 tickLine={{ stroke: 'hsl(var(--border))' }}
                 label={{
                   value: `(${METRIC_LABELS[yAxis2Metric].unit})`,
-                  position: 'insideTopRight',
+                  position: 'top',
+                  dy: -15,
                   style: { textAnchor: 'end', fill: 'hsl(var(--muted-foreground))' },
                 }}
               />
