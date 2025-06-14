@@ -28,3 +28,7 @@ export interface YearlyEnergyData {
   year: number;
   technologies: TechnologyData[];
 }
+
+export interface GenerationCapacityData {
+  data: YearlyEnergyData[];
+}

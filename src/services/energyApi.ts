@@ -1,9 +1,5 @@
 
-import type { YearlyEnergyData } from "@/types";
-
-export interface GenerationCapacityData {
-  data: YearlyEnergyData[];
-}
+import type { GenerationCapacityData } from "@/types";
 
 export const fetchEnergyData = async (): Promise<GenerationCapacityData> => {
   const response = await fetch('/energyData.json');
