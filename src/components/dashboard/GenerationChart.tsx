@@ -61,7 +61,7 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={chartData} margin={{ top: 20, right: yAxis2Metric ? 60 : 30, left: 20, bottom: 5 }}>
+          <LineChart data={chartData} margin={{ top: 20, right: yAxis2Metric ? 60 : 30, left: 20, bottom: 40 }}>
             <XAxis
               dataKey="year"
               axisLine={{ stroke: 'hsl(var(--border))' }}
@@ -85,7 +85,7 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
               />
             )}
             <Tooltip />
-            <Legend />
+            <Legend verticalAlign="bottom" />
             {technologies.map(tech => (
               <React.Fragment key={tech}>
                 {yAxis1Metric && (
