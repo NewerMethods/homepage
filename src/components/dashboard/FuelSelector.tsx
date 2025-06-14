@@ -21,7 +21,7 @@ const FUELS: { key: FuelType; label: string }[] = [
     { key: 'hydrogen', label: 'Hydrogen' },
 ];
 
-const FuelSelector = ({ selectedFuels, onFuelChange }: FuelSelectorProps) => {
+const FuelSelector = ({ selectedFuels = [], onFuelChange }: FuelSelectorProps) => {
     const handleFuelChange = (fuel: FuelType) => {
         const newFuels = selectedFuels.includes(fuel)
             ? selectedFuels.filter(f => f !== fuel)

@@ -5,8 +5,13 @@ import MetricSelector from './MetricSelector';
 import TechnologySelector from './TechnologySelector';
 import DemandSectorSelector from './DemandSectorSelector';
 import FuelSelector from './FuelSelector';
+import DataTypeSelector from './DataTypeSelector';
+
+type DataType = 'supply' | 'demand';
 
 interface DashboardControlsProps {
+  selectedDataType: DataType;
+  onDataTypeChange: (type: DataType) => void;
   selectedMetrics: Metric[];
   setSelectedMetrics: (metrics: Metric[]) => void;
   selectedTechnologies: TechnologyType[];
@@ -18,6 +23,8 @@ interface DashboardControlsProps {
 }
 
 const DashboardControls = ({
+    selectedDataType,
+    onDataTypeChange,
     selectedMetrics,
     setSelectedMetrics,
     selectedTechnologies,
@@ -28,32 +35,41 @@ const DashboardControls = ({
     setSelectedFuels,
 }: DashboardControlsProps) => {
     return (
-        <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2 p-4 border rounded-lg">
-                <h3 className="font-semibold text-center md:text-left">Supply Controls</h3>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    <MetricSelector 
-                        selectedMetrics={selectedMetrics}
-                        onMetricChange={setSelectedMetrics}
-                    />
-                    <TechnologySelector
-                        selectedTechnologies={selectedTechnologies}
-                        onTechnologyChange={setSelectedTechnologies}
-                    />
-                </div>
+        <div className="grid gap-4 p-4 border rounded-lg">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <h3 className="font-semibold shrink-0 text-lg">Data to Display</h3>
+                <DataTypeSelector 
+                    selectedType={selectedDataType}
+                    onTypeChange={onDataTypeChange}
+                />
             </div>
-            <div className="flex flex-col gap-2 p-4 border rounded-lg">
-                <h3 className="font-semibold text-center md:text-left">Demand Controls</h3>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                    <DemandSectorSelector
-                        selectedSectors={selectedDemandSectors}
-                        onSectorChange={setSelectedDemandSectors}
-                    />
-                    <FuelSelector
-                        selectedFuels={selectedFuels}
-                        onFuelChange={setSelectedFuels}
-                    />
-                </div>
+
+            <div className="flex flex-wrap gap-2 justify-start items-center p-4 border rounded-lg bg-muted/20">
+              {selectedDataType === 'supply' ? (
+                  <>
+                      <h3 className="w-full font-semibold text-center md:text-left">Supply Controls</h3>
+                      <MetricSelector 
+                          selectedMetrics={selectedMetrics}
+                          onMetricChange={setSelectedMetrics}
+                      />
+                      <TechnologySelector
+                          selectedTechnologies={selectedTechnologies}
+                          onTechnologyChange={setSelectedTechnologies}
+                      />
+                  </>
+              ) : (
+                  <>
+                      <h3 className="w-full font-semibold text-center md:text-left">Demand Controls</h3>
+                      <DemandSectorSelector
+                          selectedSectors={selectedDemandSectors}
+                          onSectorChange={setSelectedDemandSectors}
+                      />
+                      <FuelSelector
+                          selectedFuels={selectedFuels}
+                          onFuelChange={setSelectedFuels}
+                      />
+                  </>
+              )}
             </div>
         </div>
     );
