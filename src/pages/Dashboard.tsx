@@ -7,11 +7,12 @@ import DashboardSkeleton from "@/components/dashboard/DashboardSkeleton";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import DashboardControls from "@/components/dashboard/DashboardControls";
 import GenerationChart from "@/components/dashboard/GenerationChart";
-import type { TechnologyType, Metric } from '@/types';
+import type { TechnologyType, Metric, DemandSectorType } from '@/types';
 
 const Dashboard = () => {
   const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>(['electricity_generation']);
   const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(['solar', 'wind', 'gas', 'hydro']);
+  const [selectedDemandSectors, setSelectedDemandSectors] = useState<DemandSectorType[]>(['heat_pumps', 'electric_vehicles', 'industry']);
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["energyData"],
@@ -43,10 +44,12 @@ const Dashboard = () => {
         setSelectedMetrics={setSelectedMetrics}
         selectedTechnologies={selectedTechnologies}
         setSelectedTechnologies={setSelectedTechnologies}
+        selectedDemandSectors={selectedDemandSectors}
+        setSelectedDemandSectors={setSelectedDemandSectors}
       />
       {data && (
         <GenerationChart
-          data={data.data}
+          data={data.supply}
           metrics={selectedMetrics}
           technologies={selectedTechnologies}
         />

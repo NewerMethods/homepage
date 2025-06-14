@@ -1,21 +1,3 @@
-import { SubstackPost } from "@/types";
-
-export interface SubstackPost {
-  title: string;
-  pubDate: string;
-  link: string;
-  guid: string;
-  author: string;
-  thumbnail: string;
-  description: string;
-  content: string;
-  enclosure: {
-    link: string;
-    type: string;
-    length: number;
-  };
-  categories: string[];
-}
 
 export type TechnologyType = 'solar' | 'wind' | 'gas' | 'hydro';
 export type Metric = 'installed_capacity' | 'electricity_generation';
@@ -31,6 +13,27 @@ export interface YearlyEnergyData {
   technologies: TechnologyData[];
 }
 
-export interface GenerationCapacityData {
-  data: YearlyEnergyData[];
+// New Demand Types
+export type DemandSectorType = 'heat_pumps' | 'electric_vehicles' | 'industry';
+export type FuelType = 'electricity' | 'hydrogen';
+
+export interface FuelData {
+  type: FuelType;
+  energy_required: number; // in TWh
+}
+
+export interface DemandSectorData {
+  type: DemandSectorType;
+  fuels: FuelData[];
+}
+
+export interface YearlyDemandData {
+  year: number;
+  sectors: DemandSectorData[];
+}
+
+// New top-level data structure
+export interface EnergyData {
+  supply: YearlyEnergyData[];
+  demand: YearlyDemandData[];
 }
