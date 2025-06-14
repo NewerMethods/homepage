@@ -21,7 +21,7 @@ export function AppHeader() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 flex">
           <NavLink to="/" className="mr-6 flex items-center space-x-2">
-             <h1 className="text-xl font-bold font-display text-primary">Portfolio</h1>
+             <h1 className="text-2xl font-bold font-script text-primary transition-opacity hover:opacity-80">Portfolio</h1>
           </NavLink>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
