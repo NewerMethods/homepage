@@ -50,7 +50,7 @@ const Dashboard = () => {
 
   const chartData = regional?.map(r => ({
     name: r.shortname,
-    intensity: r.data[0]?.intensity.forecast || 0,
+    intensity: r.intensity?.forecast || 0,
   })).sort((a,b) => b.intensity - a.intensity);
 
   return (

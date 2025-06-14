@@ -30,5 +30,8 @@ export interface EnergyRegionData {
   regionid: number;
   dnoregion: string;
   shortname: string;
-  data: EnergyIntensityData[];
+  intensity: {
+    forecast: number;
+    index: string;
+  };
 }
