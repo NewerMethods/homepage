@@ -1,6 +1,7 @@
 
 import { Outlet } from "react-router-dom";
 import { AppHeader } from "./AppHeader";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -9,6 +10,7 @@ const Layout = () => {
       <main className="flex-1 container py-4 md:py-8 lg:py-12">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
