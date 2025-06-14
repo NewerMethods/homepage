@@ -70,18 +70,26 @@ const GenerationChart = ({ data, metrics, technologies }: GenerationChartProps) 
             {yAxis1Metric && (
               <YAxis
                 yAxisId="left"
-                unit={` ${METRIC_LABELS[yAxis1Metric].unit}`}
                 axisLine={{ stroke: 'hsl(var(--border))' }}
                 tickLine={{ stroke: 'hsl(var(--border))' }}
+                label={{
+                  value: `(${METRIC_LABELS[yAxis1Metric].unit})`,
+                  position: 'insideTopLeft',
+                  style: { textAnchor: 'start', fill: 'hsl(var(--muted-foreground))' },
+                }}
               />
             )}
             {yAxis2Metric && (
               <YAxis
                 yAxisId="right"
                 orientation="right"
-                unit={` ${METRIC_LABELS[yAxis2Metric].unit}`}
                 axisLine={{ stroke: 'hsl(var(--border))' }}
                 tickLine={{ stroke: 'hsl(var(--border))' }}
+                label={{
+                  value: `(${METRIC_LABELS[yAxis2Metric].unit})`,
+                  position: 'insideTopRight',
+                  style: { textAnchor: 'end', fill: 'hsl(var(--muted-foreground))' },
+                }}
               />
             )}
             <Tooltip />
