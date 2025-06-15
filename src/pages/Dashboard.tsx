@@ -9,6 +9,7 @@ import GenerationChart from "@/components/dashboard/GenerationChart";
 import DemandChart from "@/components/dashboard/DemandChart";
 import type { TechnologyType, Metric, DemandSectorType, FuelType } from '@/types';
 import { METRICS, TECHNOLOGIES, SECTORS, FUELS } from '@/config/dashboardConfig';
+import { pageAnimationVariants } from "@/lib/variants";
 
 type DataType = 'supply' | 'demand';
 
@@ -44,9 +45,10 @@ const Dashboard = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      variants={pageAnimationVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="space-y-8"
     >
       <DashboardHeader />

@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
@@ -66,7 +67,7 @@ export function AppHeader() {
                         end={item.end}
                         onClick={() => setMobileMenuOpen(false)}
                         className={({ isActive }) =>
-                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary-darker font-semibold" : "text-foreground"}`
+                          `text-lg font-medium transition-colors ${isActive ? "text-primary-darker font-semibold" : "text-foreground hover:text-primary"}`
                         }
                       >
                         {item.label}

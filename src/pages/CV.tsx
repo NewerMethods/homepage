@@ -1,24 +1,20 @@
-
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import { pageAnimationVariants, sectionVariants } from "@/lib/variants";
 
 const CV = () => {
   const skills = ["React", "TypeScript", "Node.js", "Tailwind CSS", "Vite", "SQL", "Figma"];
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      variants={pageAnimationVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
       <header className="mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
