@@ -35,8 +35,8 @@ const DashboardControls = ({
     setSelectedFuels,
 }: DashboardControlsProps) => {
     return (
-        <div className="grid gap-4 p-4 border rounded-lg">
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <div className="flex flex-col md:flex-row md:items-center md:flex-wrap gap-x-6 gap-y-4 p-4 border rounded-lg">
+            <div className="flex items-center gap-4">
                 <h3 className="font-semibold shrink-0 text-lg">Data to Display</h3>
                 <DataTypeSelector 
                     selectedType={selectedDataType}
@@ -44,10 +44,10 @@ const DashboardControls = ({
                 />
             </div>
 
-            <div className="flex flex-wrap gap-2 justify-start items-center p-4 border rounded-lg bg-muted/20">
+            <div className="flex items-center flex-wrap gap-4">
               {selectedDataType === 'supply' ? (
                   <>
-                      <h3 className="w-full font-semibold text-center md:text-left">Supply Controls</h3>
+                      <h3 className="font-semibold text-lg">Supply Controls</h3>
                       <MetricSelector 
                           selectedMetrics={selectedMetrics}
                           onMetricChange={setSelectedMetrics}
@@ -59,7 +59,7 @@ const DashboardControls = ({
                   </>
               ) : (
                   <>
-                      <h3 className="w-full font-semibold text-center md:text-left">Demand Controls</h3>
+                      <h3 className="font-semibold text-lg">Demand Controls</h3>
                       <DemandSectorSelector
                           selectedSectors={selectedDemandSectors}
                           onSectorChange={setSelectedDemandSectors}
