@@ -24,7 +24,7 @@ const reports = [
 const Reports = () => {
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-4xl font-bold mb-8">Energy Reports</h1>
+      <h1 className="text-5xl font-extrabold font-display mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400">Energy Reports</h1>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {reports.map((report) => (
           <Link to={report.link} key={report.title} className="group">
@@ -46,3 +46,4 @@ const Reports = () => {
 };
 
 export default Reports;
+

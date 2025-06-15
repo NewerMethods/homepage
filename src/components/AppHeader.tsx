@@ -11,7 +11,6 @@ import { Menu, RectangleHorizontal } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { href: "/", label: "Home", end: true },
@@ -50,7 +49,6 @@ export function AppHeader() {
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
-          <ThemeToggle />
           <div className="md:hidden">
             <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <DrawerTrigger asChild>
@@ -84,3 +82,4 @@ export function AppHeader() {
     </header>
   );
 }
+
