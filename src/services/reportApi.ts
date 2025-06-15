@@ -11,9 +11,9 @@ import renewableGrowthData from '@/data/reports/report-data/renewable-growth-lin
 import regionalEnergyData from '@/data/reports/report-data/regional-energy-heatmap.json';
 
 const reports: Record<string, Report> = {
-  'energy-report-1': report1,
-  'energy-report-2': report2,
-  'energy-report-3': report3,
+  'energy-report-1': report1 as Report,
+  'energy-report-2': report2 as Report,
+  'energy-report-3': report3 as Report,
 };
 
 const chartData: Record<string, any> = {
