@@ -5,7 +5,7 @@ const SubstackEmbed = () => {
   return (
     <div className="rounded-lg overflow-hidden border">
         <iframe
-        src="https://lovable.substack.com/embed"
+        src="https://currentlyspeaking.substack.com/embed"
         width="100%"
         height="320"
         style={{ background: "hsl(var(--card))" }}
