@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { TechnologyType, Metric, DemandSectorType, FuelType } from '@/types';
 import MetricSelector from './MetricSelector';
@@ -35,42 +34,35 @@ const DashboardControls = ({
     setSelectedFuels,
 }: DashboardControlsProps) => {
     return (
-        <div className="flex flex-col md:flex-row md:items-center md:flex-wrap gap-x-6 gap-y-4 p-4 border rounded-lg">
-            <div className="flex items-center gap-4">
-                <h3 className="font-semibold shrink-0 text-lg">Data to Display</h3>
-                <DataTypeSelector 
-                    selectedType={selectedDataType}
-                    onTypeChange={onDataTypeChange}
-                />
-            </div>
+        <div className="flex flex-col md:flex-row md:items-center md:flex-wrap gap-4 p-4 border rounded-lg">
+            <DataTypeSelector 
+                selectedType={selectedDataType}
+                onTypeChange={onDataTypeChange}
+            />
 
-            <div className="flex items-center flex-wrap gap-4">
-              {selectedDataType === 'supply' ? (
-                  <>
-                      <h3 className="font-semibold text-lg">Supply Controls</h3>
-                      <MetricSelector 
-                          selectedMetrics={selectedMetrics}
-                          onMetricChange={setSelectedMetrics}
-                      />
-                      <TechnologySelector
-                          selectedTechnologies={selectedTechnologies}
-                          onTechnologyChange={setSelectedTechnologies}
-                      />
-                  </>
-              ) : (
-                  <>
-                      <h3 className="font-semibold text-lg">Demand Controls</h3>
-                      <DemandSectorSelector
-                          selectedSectors={selectedDemandSectors}
-                          onSectorChange={setSelectedDemandSectors}
-                      />
-                      <FuelSelector
-                          selectedFuels={selectedFuels}
-                          onFuelChange={setSelectedFuels}
-                      />
-                  </>
-              )}
-            </div>
+            {selectedDataType === 'supply' ? (
+                <>
+                    <MetricSelector 
+                        selectedMetrics={selectedMetrics}
+                        onMetricChange={setSelectedMetrics}
+                    />
+                    <TechnologySelector
+                        selectedTechnologies={selectedTechnologies}
+                        onTechnologyChange={setSelectedTechnologies}
+                    />
+                </>
+            ) : (
+                <>
+                    <DemandSectorSelector
+                        selectedSectors={selectedDemandSectors}
+                        onSectorChange={setSelectedDemandSectors}
+                    />
+                    <FuelSelector
+                        selectedFuels={selectedFuels}
+                        onFuelChange={setSelectedFuels}
+                    />
+                </>
+            )}
         </div>
     );
 };
