@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,20 +19,18 @@ const RedirectHandler = () => {
     const redirectPath = sessionStorage.getItem('redirectPath');
     if (redirectPath) {
       sessionStorage.removeItem('redirectPath');
-      // Vite's base URL, e.g., /homepage/
-      const basePath = import.meta.env.BASE_URL;
-      let navigateTo = redirectPath;
+      const basePath = import.meta.env.BASE_URL; // e.g., /homepage/
 
-      // If the redirectPath starts with the base path, strip it
-      // so react-router can handle the relative path correctly.
-      if (navigateTo.startsWith(basePath)) {
-        // e.g. /homepage/cv -> /cv
-        navigateTo = navigateTo.substring(basePath.length -1);
-      }
+      if (redirectPath.startsWith(basePath)) {
+        // Get the path part after the base path.
+        // e.g., for '/homepage/cv', this results in 'cv'
+        const relativePath = redirectPath.substring(basePath.length);
 
-      // Ensure navigateTo is not empty and not just the root
-      if (navigateTo && navigateTo !== '/') {
-        navigate(navigateTo, { replace: true });
+        // If there's a relative path, navigate to it.
+        // If it's empty, it means we were at the root, so no navigation is needed.
+        if (relativePath) {
+          navigate(relativePath, { replace: true });
+        }
       }
     }
   }, [navigate]);
