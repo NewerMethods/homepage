@@ -9,7 +9,7 @@ export interface ReportContentBlock {
   type: 'heading' | 'paragraph' | 'chart';
   id?: string;
   content?: string;
-  chartType?: 'line' | 'heatmap';
+  chartType?: 'line' | 'heatmap' | 'image';
   dataUrl?: string;
   title?: string;
   description?: string;

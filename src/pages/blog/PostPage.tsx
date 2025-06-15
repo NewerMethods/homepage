@@ -22,8 +22,9 @@ const PostPage = () => {
   const sections = useMemo(() => {
     if (!post?.content) return [];
     return post.content
-      .filter((block): block is Extract<ReportContentBlock, { type: 'heading' }> & { id: string } => 
-        block.type === 'heading' && !!block.id
+      .filter(
+        (block): block is ReportContentBlock & { type: 'heading'; id: string; content: string } =>
+          block.type === 'heading' && !!block.id && !!block.content
       )
       .map((block) => ({
         id: block.id,

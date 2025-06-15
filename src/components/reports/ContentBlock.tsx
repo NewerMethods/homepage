@@ -1,14 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { ReportContentBlock as ReportContentBlockType } from '@/types/reports';
 import { fetchChartData } from '@/services/reportApi';
-import { AnimatedParagraph } from './AnimatedParagraph';
 import { Section } from './Section';
 import { ReportLineChart } from './ReportLineChart';
 import { ReportHeatmap } from './ReportHeatmap';
 import { Skeleton } from '@/components/ui/skeleton';
 import { debounce } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 type ContentBlockProps = {
   block: ReportContentBlockType;
@@ -56,11 +55,30 @@ const ChartRenderer = ({ block }: ContentBlockProps) => {
   }
 };
 
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 export const ContentBlock = ({ block }: ContentBlockProps) => {
   const content = (
     <>
       {block.type === 'heading' && <h2 className="text-3xl font-bold mb-4">{block.content}</h2>}
-      {block.type === 'paragraph' && <AnimatedParagraph><div dangerouslySetInnerHTML={{ __html: block.content }} /></AnimatedParagraph>}
+      {block.type === 'paragraph' && block.content && (
+        <motion.div
+          variants={paragraphVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          dangerouslySetInnerHTML={{ __html: block.content }}
+        />
+      )}
       {block.type === 'chart' && <ChartRenderer block={block} />}
     </>
   );
