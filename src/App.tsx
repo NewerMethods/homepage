@@ -21,7 +21,7 @@ const RedirectHandler = () => {
     if (redirectPath) {
       sessionStorage.removeItem('redirectPath');
       // IMPORTANT: Replace '/portfolio' with your repository name.
-      const basePath = '/portfolio';
+      const basePath = '/homepage';
       let navigateTo = redirectPath;
       if (redirectPath.startsWith(basePath)) {
         navigateTo = redirectPath.substring(basePath.length);
