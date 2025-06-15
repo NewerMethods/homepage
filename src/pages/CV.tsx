@@ -1,6 +1,9 @@
+
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const CV = () => {
   const skills = ["React", "TypeScript", "Node.js", "Tailwind CSS", "Vite", "SQL", "Figma"];
@@ -17,8 +20,18 @@ const CV = () => {
       transition={{ duration: 0.5 }}
     >
       <header className="mb-12">
-        <h1 className="text-5xl font-extrabold font-display mb-2">Curriculum Vitae</h1>
-        <p className="text-lg text-muted-foreground">A summary of my professional experience, skills, and education.</p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="text-5xl font-extrabold font-display">Curriculum Vitae</h1>
+            <p className="text-lg text-muted-foreground mt-2">A summary of my professional experience, skills, and education.</p>
+          </div>
+          <a href="/cv.pdf" download="cv.pdf" className="shrink-0">
+            <Button>
+              <Download className="mr-2" />
+              Download PDF
+            </Button>
+          </a>
+        </div>
       </header>
 
       <div className="space-y-12">
