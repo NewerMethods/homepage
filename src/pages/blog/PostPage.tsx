@@ -35,15 +35,15 @@ const PostPage = () => {
   if (isLoading) {
     return (
       <div className="container mx-auto py-8">
-        <header className="mb-8">
-            <Skeleton className="h-12 w-3/4 mb-4" />
-            <Skeleton className="h-6 w-1/4" />
-        </header>
         <div className="flex">
             <div className="w-56 hidden md:block mr-8">
                 <Skeleton className="h-48 w-full" />
             </div>
             <div className="flex-1">
+                <header className="mb-8">
+                    <Skeleton className="h-12 w-3/4 mb-4" />
+                    <Skeleton className="h-6 w-1/4" />
+                </header>
                 <Skeleton className="h-8 w-1/2 mb-4" />
                 <Skeleton className="h-48 w-full mb-8" />
                 <Skeleton className="h-8 w-1/2 mb-4" />
@@ -60,18 +60,20 @@ const PostPage = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <header className="mb-8">
-        <PageHeader title={post.title} />
-        <p className="text-muted-foreground mt-2 text-lg">
-          {format(new Date(post.date), 'MMMM d, yyyy')}
-        </p>
-      </header>
       <ReportLayout sections={sections}>
-        <article>
-          {post.content.map((block, index) => (
-            <ContentBlock key={index} block={block} />
-          ))}
-        </article>
+        <>
+          <header className="mb-8">
+            <PageHeader title={post.title} />
+            <p className="text-muted-foreground mt-2 text-lg">
+              {format(new Date(post.date), 'MMMM d, yyyy')}
+            </p>
+          </header>
+          <article>
+            {post.content.map((block, index) => (
+              <ContentBlock key={index} block={block} />
+            ))}
+          </article>
+        </>
       </ReportLayout>
     </div>
   );
