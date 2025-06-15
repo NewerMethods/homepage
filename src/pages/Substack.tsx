@@ -10,7 +10,7 @@ import type { SubstackPost } from "@/types";
 import PageHeader from "@/components/PageHeader";
 
 // NOTE: Replace this URL with your own Substack feed
-const SUBSTACK_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fpudgypenguins.substack.com%2Ffeed";
+const SUBSTACK_RSS_URL = "https://currentlyspeaking.substack.com/feed";
 
 const fetchSubstackFeed = async (): Promise<SubstackPost[]> => {
   const res = await fetch(SUBSTACK_RSS_URL);
