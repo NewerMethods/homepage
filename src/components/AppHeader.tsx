@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
@@ -40,7 +39,7 @@ export function AppHeader() {
                   <NavigationMenuItem key={item.label}>
                     <NavLink to={item.href} end={item.end}>
                       {({ isActive }) => (
-                        <NavigationMenuLink active={isActive} className={cn(navigationMenuTriggerStyle(), isActive && 'text-primary-darker font-semibold')}>
+                        <NavigationMenuLink active={isActive} className={cn(navigationMenuTriggerStyle())}>
                           {item.label}
                         </NavigationMenuLink>
                       )}
