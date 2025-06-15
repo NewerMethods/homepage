@@ -1,23 +1,14 @@
-
 import { ResponsiveContainer, ScatterChart, Scatter, XAxis, YAxis, ZAxis, Tooltip, CartesianGrid, Cell } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
+type ReportHeatmapProps = {
+  data: any[];
+  title?: string;
+  description?: string;
+};
+
 const regions = ['North', 'South', 'East', 'West', 'Central'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-const data: { regionIndex: number; monthIndex: number; region: string; month: string; value: number }[] = [];
-for (let i = 0; i < regions.length; i++) {
-  for (let j = 0; j < months.length; j++) {
-    const value = Math.floor(Math.random() * 200) + 50;
-    data.push({
-      regionIndex: i,
-      monthIndex: j,
-      region: regions[i],
-      month: months[j],
-      value: value,
-    });
-  }
-}
 
 const getColor = (value: number) => {
     const max = 250;
@@ -40,12 +31,12 @@ const CustomTooltip = ({ active, payload }: any) => {
     return null;
 };
 
-export const ReportHeatmap = () => {
+export const ReportHeatmap = ({ data, title, description }: ReportHeatmapProps) => {
   return (
     <Card className="my-8">
       <CardHeader>
-        <CardTitle>Regional Energy Usage Heatmap</CardTitle>
-        <CardDescription>Monthly energy usage across different regions (in GWh)</CardDescription>
+        <CardTitle>{title || 'Regional Energy Usage Heatmap'}</CardTitle>
+        <CardDescription>{description || 'Monthly energy usage across different regions (in GWh)'}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="h-[500px]">

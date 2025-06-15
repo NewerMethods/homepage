@@ -1,0 +1,18 @@
+
+[
+  {
+    "slug": "energy-report-1",
+    "title": "Annual Energy Outlook 2024",
+    "description": "An in-depth analysis of energy production and consumption trends, featuring an interactive heatmap of regional energy usage."
+  },
+  {
+    "slug": "energy-report-2",
+    "title": "Renewable Energy Market Update",
+    "description": "Exploring the growth of solar, wind, and other renewable sources with detailed interactive charts."
+  },
+  {
+    "slug": "energy-report-3",
+    "title": "Future of Electric Vehicles",
+    "description": "A comprehensive report on the EV market, battery technology, and charging infrastructure projections."
+  }
+]

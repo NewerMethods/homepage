@@ -1,0 +1,54 @@
+
+{
+  "slug": "energy-report-3",
+  "title": "Future of Electric Vehicles",
+  "sections": [
+    { "id": "introduction", "title": "Introduction to EVs" },
+    { "id": "market-trends", "title": "Market Trends" },
+    { "id": "infrastructure", "title": "Infrastructure Needs" }
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "id": "introduction",
+      "content": "The Future of Electric Vehicles"
+    },
+    {
+      "type": "paragraph",
+      "content": "Electric vehicles (EVs) are at the forefront of the transportation revolution. This report examines the current state of the EV market, explores key technological advancements, and projects future growth trajectories. We delve into the factors driving consumer adoption and the challenges that lie ahead for widespread electrification."
+    },
+    {
+      "type": "heading",
+      "id": "market-trends",
+      "content": "EV Market Trends"
+    },
+    {
+      "type": "paragraph",
+      "content": "The global EV market is expanding at an exponential rate. This growth is propelled by a combination of factors, including stricter emissions regulations, improving battery technology, and a wider range of available models. The chart below showcases the projected growth in EV sales over the next decade, using a sample line chart for demonstration."
+    },
+    {
+      "type": "chart",
+      "chartType": "line",
+      "dataUrl": "/data/reports/report-data/renewable-growth-linechart.json",
+      "title": "Projected EV Sales Growth",
+      "description": "Demonstration using renewable data"
+    },
+    {
+      "type": "paragraph",
+      "content": "Legacy automakers and new entrants are all vying for market share, leading to intense competition and innovation. Battery costs, a major component of EV prices, continue to decline, making EVs more affordable for the average consumer."
+    },
+    {
+      "type": "heading",
+      "id": "infrastructure",
+      "content": "Charging Infrastructure Needs"
+    },
+    {
+      "type": "paragraph",
+      "content": "A robust and accessible charging infrastructure is critical for the mass adoption of EVs. This section analyzes the current state of public and private charging networks and identifies the investment needed to support a fully electric fleet. We discuss the different types of chargers (Level 1, Level 2, DC Fast Charging) and their roles in the ecosystem."
+    },
+    {
+      "type": "paragraph",
+      "content": "Smart charging solutions, vehicle-to-grid (V2G) technology, and wireless charging are emerging as key areas of innovation that could transform the EV charging experience and enhance grid stability. Policy support and private investment will be essential to build out the necessary infrastructure."
+    }
+  ]
+}
