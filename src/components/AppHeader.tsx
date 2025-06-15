@@ -13,10 +13,11 @@ import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/cv", label: "CV" },
-  { href: "/substack", label: "Substack" },
-  { href: "/dashboard", label: "Dashboard" },
+  { href: "/", label: "Home", end: true },
+  { href: "/cv", label: "CV", end: true },
+  { href: "/substack", label: "Substack", end: true },
+  { href: "/reports", label: "Reports", end: false },
+  { href: "/dashboard", label: "Dashboard", end: true },
 ];
 
 export function AppHeader() {
@@ -36,7 +37,7 @@ export function AppHeader() {
               <NavigationMenuList>
                 {navItems.map((item) => (
                   <NavigationMenuItem key={item.label}>
-                    <NavLink to={item.href} end>
+                    <NavLink to={item.href} end={item.end}>
                       {({ isActive }) => (
                         <NavigationMenuLink active={isActive} className={navigationMenuTriggerStyle()}>
                           {item.label}
@@ -62,7 +63,7 @@ export function AppHeader() {
                       <NavLink
                         key={item.label}
                         to={item.href}
-                        end
+                        end={item.end}
                         onClick={() => setMobileMenuOpen(false)}
                         className={({ isActive }) =>
                           `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground"}`
