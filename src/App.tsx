@@ -20,12 +20,18 @@ const RedirectHandler = () => {
     const redirectPath = sessionStorage.getItem('redirectPath');
     if (redirectPath) {
       sessionStorage.removeItem('redirectPath');
-      // IMPORTANT: Replace '/portfolio' with your repository name.
-      const basePath = '/homepage';
+      // Vite's base URL, e.g., /homepage/
+      const basePath = import.meta.env.BASE_URL;
       let navigateTo = redirectPath;
-      if (redirectPath.startsWith(basePath)) {
-        navigateTo = redirectPath.substring(basePath.length);
+
+      // If the redirectPath starts with the base path, strip it
+      // so react-router can handle the relative path correctly.
+      if (navigateTo.startsWith(basePath)) {
+        // e.g. /homepage/cv -> /cv
+        navigateTo = navigateTo.substring(basePath.length -1);
       }
+
+      // Ensure navigateTo is not empty and not just the root
       if (navigateTo && navigateTo !== '/') {
         navigate(navigateTo, { replace: true });
       }
@@ -40,7 +46,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <RedirectHandler />
         <Routes>
           <Route element={<Layout />}>
