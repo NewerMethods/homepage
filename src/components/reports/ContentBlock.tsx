@@ -70,7 +70,7 @@ const paragraphVariants = {
 export const ContentBlock = ({ block }: ContentBlockProps) => {
   const content = (
     <>
-      {block.type === 'heading' && <h2 className="text-3xl font-bold mt-8 mb-4">{block.content}</h2>}
+      {block.type === 'heading' && <h2 className="text-3xl font-bold mt-4 mb-2">{block.content}</h2>}
       {block.type === 'paragraph' && block.content && (
         <motion.div
           variants={paragraphVariants}
@@ -88,5 +88,5 @@ export const ContentBlock = ({ block }: ContentBlockProps) => {
     return <Section id={block.id}>{content}</Section>;
   }
 
-  return <div className="py-4 first:pt-0 last:pb-0">{content}</div>;
+  return <div className="py-2 first:pt-0 last:pb-0">{content}</div>;
 };
