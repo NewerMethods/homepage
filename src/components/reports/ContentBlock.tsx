@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { ReportContentBlock as ReportContentBlockType } from '@/types/reports';
 import { fetchChartData } from '@/services/reportApi';
@@ -8,12 +8,26 @@ import { Section } from './Section';
 import { ReportLineChart } from './ReportLineChart';
 import { ReportHeatmap } from './ReportHeatmap';
 import { Skeleton } from '@/components/ui/skeleton';
+import { debounce } from '@/lib/utils';
 
 type ContentBlockProps = {
   block: ReportContentBlockType;
 };
 
 const ChartRenderer = ({ block }: ContentBlockProps) => {
+  const [renderKey, setRenderKey] = useState(0);
+
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      setRenderKey(prev => prev + 1);
+    }, 200);
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const { data, isLoading, error } = useQuery({
     queryKey: ['chartData', block.dataUrl],
     queryFn: () => fetchChartData(block.dataUrl!),
@@ -25,9 +39,9 @@ const ChartRenderer = ({ block }: ContentBlockProps) => {
 
   switch (block.chartType) {
     case 'line':
-      return <ReportLineChart data={data} title={block.title} description={block.description} />;
+      return <ReportLineChart key={renderKey} data={data} title={block.title} description={block.description} />;
     case 'heatmap':
-      return <ReportHeatmap data={data} title={block.title} description={block.description} />;
+      return <ReportHeatmap key={renderKey} data={data} title={block.title} description={block.description} />;
     default:
       return null;
   }
