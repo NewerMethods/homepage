@@ -15,6 +15,7 @@ import Reports from "./pages/Reports";
 import EnergyReport1 from "./pages/reports/EnergyReport1";
 import EnergyReport2 from "./pages/reports/EnergyReport2";
 import EnergyReport3 from "./pages/reports/EnergyReport3";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const queryClient = new QueryClient();
 
@@ -44,28 +45,30 @@ const RedirectHandler = () => {
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <RedirectHandler />
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="/cv" element={<CV />} />
-            <Route path="/substack" element={<Substack />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/reports/energy-report-1" element={<EnergyReport1 />} />
-            <Route path="/reports/energy-report-2" element={<EnergyReport2 />} />
-            <Route path="/reports/energy-report-3" element={<EnergyReport3 />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <RedirectHandler />
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/cv" element={<CV />} />
+              <Route path="/substack" element={<Substack />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/reports/energy-report-1" element={<EnergyReport1 />} />
+              <Route path="/reports/energy-report-2" element={<EnergyReport2 />} />
+              <Route path="/reports/energy-report-3" element={<EnergyReport3 />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
