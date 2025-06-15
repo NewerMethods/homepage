@@ -7,6 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Terminal } from "lucide-react";
 import { motion } from "framer-motion";
 import type { SubstackPost } from "@/types";
+import PageHeader from "@/components/PageHeader";
 
 // NOTE: Replace this URL with your own Substack feed
 const SUBSTACK_RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fpudgypenguins.substack.com%2Ffeed";
@@ -36,8 +37,7 @@ const Substack = () => {
       transition={{ duration: 0.5 }}
     >
       <header className="mb-12">
-        <h1 className="text-5xl font-extrabold font-display mb-2">Latest Posts</h1>
-        <p className="text-lg text-muted-foreground">Thoughts and articles from my Substack.</p>
+        <PageHeader title="Latest Posts" description="Thoughts and articles from my Substack." />
       </header>
 
       {error && (

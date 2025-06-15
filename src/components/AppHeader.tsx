@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
@@ -10,6 +11,7 @@ import { Menu, RectangleHorizontal } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Home", end: true },
@@ -38,7 +40,7 @@ export function AppHeader() {
                   <NavigationMenuItem key={item.label}>
                     <NavLink to={item.href} end={item.end}>
                       {({ isActive }) => (
-                        <NavigationMenuLink active={isActive} className={`${navigationMenuTriggerStyle()} ${isActive ? 'text-primary-darker' : ''}`}>
+                        <NavigationMenuLink active={isActive} className={cn(navigationMenuTriggerStyle(), isActive && 'text-primary-darker font-semibold')}>
                           {item.label}
                         </NavigationMenuLink>
                       )}
@@ -65,7 +67,7 @@ export function AppHeader() {
                         end={item.end}
                         onClick={() => setMobileMenuOpen(false)}
                         className={({ isActive }) =>
-                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary-darker" : "text-foreground"}`
+                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary-darker font-semibold" : "text-foreground"}`
                         }
                       >
                         {item.label}

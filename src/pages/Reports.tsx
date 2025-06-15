@@ -1,6 +1,8 @@
+
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 const reports = [
   {
@@ -23,7 +25,9 @@ const reports = [
 const Reports = () => {
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-5xl font-extrabold font-display mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400 pb-2">Energy Reports</h1>
+      <header className="mb-8">
+        <PageHeader title="Energy Reports" />
+      </header>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {reports.map((report) => (
           <Link to={report.link} key={report.title} className="group">

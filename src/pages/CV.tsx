@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 const CV = () => {
   const skills = ["React", "TypeScript", "Node.js", "Tailwind CSS", "Vite", "SQL", "Figma"];
@@ -22,8 +23,7 @@ const CV = () => {
       <header className="mb-12">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-5xl font-extrabold font-display">Curriculum Vitae</h1>
-            <p className="text-lg text-muted-foreground mt-2">A summary of my professional experience, skills, and education.</p>
+            <PageHeader title="Curriculum Vitae" description="A summary of my professional experience, skills, and education." />
           </div>
           <a href="/cv.pdf" download="cv.pdf" className="shrink-0">
             <Button>
