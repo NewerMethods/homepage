@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
@@ -16,6 +17,7 @@ const navItems = [
   { href: "/", label: "Home", end: true },
   { href: "/cv", label: "CV", end: true },
   { href: "/substack", label: "Substack", end: true },
+  { href: "/blog", label: "Blog", end: false },
   { href: "/reports", label: "Reports", end: false },
 ];
 

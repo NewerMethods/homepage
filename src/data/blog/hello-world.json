@@ -1,0 +1,21 @@
+
+{
+  "slug": "hello-world",
+  "title": "Hello World: My First Blog Post",
+  "description": "Welcome to my new blog! Here's a little about what to expect.",
+  "date": "2025-06-15",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "This is the very first post on my new blog. I'm excited to start sharing my thoughts on software development, technology, and career growth. I've been working in this field for a while now, and I've learned a lot that I hope can be useful to others."
+    },
+    {
+      "type": "heading",
+      "content": "What to Expect"
+    },
+    {
+      "type": "paragraph",
+      "content": "I plan to write about a variety of topics, including tutorials on new frameworks, deep dives into programming concepts, reflections on industry trends, and advice for fellow developers. Stay tuned for more content!"
+    }
+  ]
+}

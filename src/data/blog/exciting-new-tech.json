@@ -1,0 +1,13 @@
+
+{
+  "slug": "exciting-new-tech",
+  "title": "Exploring Exciting New Technologies",
+  "description": "A dive into some of the new tech I've been experimenting with lately.",
+  "date": "2025-05-20",
+  "content": [
+    {
+      "type": "paragraph",
+      "content": "The world of technology is always moving forward. Lately, I've been spending my time with a few new tools and frameworks that I find particularly exciting. From new JavaScript runtimes to advances in AI, there's a lot to be excited about."
+    }
+  ]
+}

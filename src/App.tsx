@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +12,8 @@ import Substack from "./pages/Substack";
 import NotFound from "./pages/NotFound";
 import Reports from "./pages/Reports";
 import ReportPage from "./pages/reports/ReportPage";
+import Blog from "./pages/Blog";
+import PostPage from "./pages/blog/PostPage";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +54,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/substack" element={<Substack />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postSlug" element={<PostPage />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/reports/:reportSlug" element={<ReportPage />} />
           </Route>

@@ -1,6 +1,6 @@
 
 import FeatureCard from "@/components/FeatureCard";
-import { BookUser, Rss, FileText } from "lucide-react";
+import { BookUser, Rss, FileText, Newspaper } from "lucide-react";
 
 const features = [
   {
@@ -14,6 +14,12 @@ const features = [
     title: "Substack",
     description: "Read my thoughts on technology, development, and more.",
     href: "/substack",
+  },
+  {
+    icon: <Newspaper size={28} />,
+    title: "Blog",
+    description: "Personal articles and tutorials about development and tech.",
+    href: "/blog",
   },
   {
     icon: <FileText size={28} />,

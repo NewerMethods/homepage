@@ -1,0 +1,21 @@
+
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World: My First Blog Post",
+    "description": "Welcome to my new blog! Here's a little about what to expect.",
+    "date": "2025-06-15"
+  },
+  {
+    "slug": "exciting-new-tech",
+    "title": "Exploring Exciting New Technologies",
+    "description": "A dive into some of the new tech I've been experimenting with lately.",
+    "date": "2025-05-20"
+  },
+  {
+    "slug": "thoughts-on-remote-work",
+    "title": "My Thoughts on Remote Work",
+    "description": "Reflections on the pros and cons of remote work in the tech industry.",
+    "date": "2025-06-01"
+  }
+]
