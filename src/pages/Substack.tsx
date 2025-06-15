@@ -13,7 +13,7 @@ import PageHeader from "@/components/PageHeader";
 const SUBSTACK_RSS_URL = "https://newermethods.substack.com/feed";
 
 const fetchSubstackFeed = async (): Promise<SubstackPost[]> => {
-  const res = await fetch(SUBSTACK_RSS_URL);
+  const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_RSS_URL)}`);
   if (!res.ok) {
     throw new Error("Network response was not ok");
   }
