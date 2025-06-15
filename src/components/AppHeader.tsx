@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
@@ -39,7 +38,7 @@ export function AppHeader() {
                   <NavigationMenuItem key={item.label}>
                     <NavLink to={item.href} end={item.end}>
                       {({ isActive }) => (
-                        <NavigationMenuLink active={isActive} className={navigationMenuTriggerStyle()}>
+                        <NavigationMenuLink active={isActive} className={`${navigationMenuTriggerStyle()} ${isActive ? 'text-primary-darker' : ''}`}>
                           {item.label}
                         </NavigationMenuLink>
                       )}
@@ -66,7 +65,7 @@ export function AppHeader() {
                         end={item.end}
                         onClick={() => setMobileMenuOpen(false)}
                         className={({ isActive }) =>
-                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-foreground"}`
+                          `text-lg font-medium transition-colors hover:text-primary ${isActive ? "text-primary-darker" : "text-foreground"}`
                         }
                       >
                         {item.label}
@@ -82,4 +81,3 @@ export function AppHeader() {
     </header>
   );
 }
-
