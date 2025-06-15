@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { fetchBlogPost } from '@/services/blogApi';
@@ -7,6 +7,8 @@ import { ContentBlock } from '@/components/reports/ContentBlock';
 import { Skeleton } from '@/components/ui/skeleton';
 import PageHeader from '@/components/PageHeader';
 import { format } from 'date-fns';
+import { ReportLayout } from '@/components/reports/ReportLayout';
+import type { ReportContentBlock } from '@/types/reports';
 
 const PostPage = () => {
   const { postSlug } = useParams<{ postSlug: string }>();
@@ -17,14 +19,36 @@ const PostPage = () => {
     enabled: !!postSlug,
   });
 
+  const sections = useMemo(() => {
+    if (!post?.content) return [];
+    return post.content
+      .filter((block): block is Extract<ReportContentBlock, { type: 'heading' }> & { id: string } => 
+        block.type === 'heading' && !!block.id
+      )
+      .map((block) => ({
+        id: block.id,
+        title: block.content,
+      }));
+  }, [post]);
+
   if (isLoading) {
     return (
-      <div className="max-w-4xl mx-auto">
-        <Skeleton className="h-12 w-3/4 mb-4" />
-        <Skeleton className="h-6 w-1/4 mb-8" />
-        <Skeleton className="h-24 w-full mb-8" />
-        <Skeleton className="h-8 w-1/2 mb-4" />
-        <Skeleton className="h-48 w-full" />
+      <div className="container mx-auto py-8">
+        <header className="mb-8">
+            <Skeleton className="h-12 w-3/4 mb-4" />
+            <Skeleton className="h-6 w-1/4" />
+        </header>
+        <div className="flex">
+            <div className="w-56 hidden md:block mr-8">
+                <Skeleton className="h-48 w-full" />
+            </div>
+            <div className="flex-1">
+                <Skeleton className="h-8 w-1/2 mb-4" />
+                <Skeleton className="h-48 w-full mb-8" />
+                <Skeleton className="h-8 w-1/2 mb-4" />
+                <Skeleton className="h-64 w-full" />
+            </div>
+        </div>
       </div>
     );
   }
@@ -34,19 +58,21 @@ const PostPage = () => {
   }
 
   return (
-    <article className="max-w-4xl mx-auto py-8">
-      <header className="mb-8 border-b pb-4">
+    <div className="container mx-auto py-8">
+      <header className="mb-8">
         <PageHeader title={post.title} />
         <p className="text-muted-foreground mt-2 text-lg">
           {format(new Date(post.date), 'MMMM d, yyyy')}
         </p>
       </header>
-      <div className="prose prose-lg max-w-none dark:prose-invert">
-        {post.content.map((block, index) => (
-          <ContentBlock key={index} block={block} />
-        ))}
-      </div>
-    </article>
+      <ReportLayout sections={sections}>
+        <article>
+          {post.content.map((block, index) => (
+            <ContentBlock key={index} block={block} />
+          ))}
+        </article>
+      </ReportLayout>
+    </div>
   );
 };
 

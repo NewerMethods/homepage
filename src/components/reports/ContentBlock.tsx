@@ -31,8 +31,17 @@ const ChartRenderer = ({ block }: ContentBlockProps) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ['chartData', block.dataUrl],
     queryFn: () => fetchChartData(block.dataUrl!),
-    enabled: !!block.dataUrl,
+    enabled: !!block.dataUrl && block.chartType !== 'image',
   });
+  
+  if (block.chartType === 'image') {
+    return (
+      <figure className="my-8">
+        <img src={block.dataUrl} alt={block.description} className="rounded-lg w-full shadow-md" />
+        {block.title && <figcaption className="text-center text-sm text-muted-foreground mt-2">{block.title}</figcaption>}
+      </figure>
+    );
+  }
 
   if (isLoading) return <Skeleton className="h-[400px] w-full my-8" />;
   if (error) return <div className="text-red-500 my-8">Error loading chart data.</div>;
@@ -51,7 +60,7 @@ export const ContentBlock = ({ block }: ContentBlockProps) => {
   const content = (
     <>
       {block.type === 'heading' && <h2 className="text-3xl font-bold mb-4">{block.content}</h2>}
-      {block.type === 'paragraph' && <AnimatedParagraph>{block.content}</AnimatedParagraph>}
+      {block.type === 'paragraph' && <AnimatedParagraph><div dangerouslySetInnerHTML={{ __html: block.content }} /></AnimatedParagraph>}
       {block.type === 'chart' && <ChartRenderer block={block} />}
     </>
   );
