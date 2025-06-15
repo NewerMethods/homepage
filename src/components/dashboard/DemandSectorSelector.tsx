@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -10,17 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { DemandSectorType } from '@/types';
+import { SECTORS } from '@/config/dashboardConfig';
 
 interface DemandSectorSelectorProps {
   selectedSectors: DemandSectorType[];
   onSectorChange: (sectors: DemandSectorType[]) => void;
 }
-
-const SECTORS: { key: DemandSectorType; label: string }[] = [
-    { key: 'heat_pumps', label: 'Heat Pumps' },
-    { key: 'electric_vehicles', label: 'Electric Vehicles' },
-    { key: 'industry', label: 'Industry' },
-];
 
 const DemandSectorSelector = ({ selectedSectors, onSectorChange }: DemandSectorSelectorProps) => {
     const handleSectorChange = (sector: DemandSectorType) => {

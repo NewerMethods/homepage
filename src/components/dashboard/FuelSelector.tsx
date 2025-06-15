@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -10,16 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { FuelType } from '@/types';
+import { FUELS } from '@/config/dashboardConfig';
 
 interface FuelSelectorProps {
   selectedFuels: FuelType[];
   onFuelChange: (fuels: FuelType[]) => void;
 }
-
-const FUELS: { key: FuelType; label: string }[] = [
-    { key: 'electricity', label: 'Electricity' },
-    { key: 'hydrogen', label: 'Hydrogen' },
-];
 
 const FuelSelector = ({ selectedFuels = [], onFuelChange }: FuelSelectorProps) => {
     const handleFuelChange = (fuel: FuelType) => {

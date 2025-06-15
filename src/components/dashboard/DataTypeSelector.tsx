@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { DATA_TYPES } from '@/config/dashboardConfig';
 
 type DataType = 'supply' | 'demand';
 
@@ -24,12 +25,11 @@ const DataTypeSelector = ({ selectedType, onTypeChange }: DataTypeSelectorProps)
       aria-label="Select data type"
       className="w-full sm:w-auto"
     >
-      <ToggleGroupItem value="supply" aria-label="Select supply" className="w-1/2 sm:w-auto">
-        Supply
-      </ToggleGroupItem>
-      <ToggleGroupItem value="demand" aria-label="Select demand" className="w-1/2 sm:w-auto">
-        Demand
-      </ToggleGroupItem>
+      {DATA_TYPES.map(({ key, label }) => (
+        <ToggleGroupItem key={key} value={key} aria-label={`Select ${label.toLowerCase()}`} className="w-1/2 sm:w-auto">
+          {label}
+        </ToggleGroupItem>
+      ))}
     </ToggleGroup>
   );
 };

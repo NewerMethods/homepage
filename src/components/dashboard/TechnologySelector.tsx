@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -10,18 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { TechnologyType } from '@/types';
+import { TECHNOLOGIES } from '@/config/dashboardConfig';
 
 interface TechnologySelectorProps {
   selectedTechnologies: TechnologyType[];
   onTechnologyChange: (techs: TechnologyType[]) => void;
 }
-
-const TECHNOLOGIES: { key: TechnologyType; label: string }[] = [
-    { key: 'solar', label: 'Solar' },
-    { key: 'wind', label: 'Wind' },
-    { key: 'gas', label: 'Gas' },
-    { key: 'hydro', label: 'Hydro' },
-];
 
 const TechnologySelector = ({ selectedTechnologies, onTechnologyChange }: TechnologySelectorProps) => {
     const handleTechnologyChange = (tech: TechnologyType) => {

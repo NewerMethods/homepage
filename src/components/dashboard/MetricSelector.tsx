@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -10,17 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { Metric } from '@/types';
+import { METRICS } from '@/config/dashboardConfig';
 
 interface MetricSelectorProps {
   selectedMetrics: Metric[];
   onMetricChange: (metrics: Metric[]) => void;
 }
-
-const METRICS: { key: Metric; label:string }[] = [
-    { key: 'electricity_generation', label: 'Electricity Generation (TWh)' },
-    { key: 'installed_capacity', label: 'Installed Capacity (GW)' },
-    { key: 'emissions', label: 'Emissions (MtCO2e)' },
-];
 
 const MetricSelector = ({ selectedMetrics, onMetricChange }: MetricSelectorProps) => {
     const handleMetricChange = (metric: Metric) => {

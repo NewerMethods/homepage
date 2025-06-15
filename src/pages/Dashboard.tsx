@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
@@ -9,15 +8,16 @@ import DashboardControls from "@/components/dashboard/DashboardControls";
 import GenerationChart from "@/components/dashboard/GenerationChart";
 import DemandChart from "@/components/dashboard/DemandChart";
 import type { TechnologyType, Metric, DemandSectorType, FuelType } from '@/types';
+import { METRICS, TECHNOLOGIES, SECTORS, FUELS } from '@/config/dashboardConfig';
 
 type DataType = 'supply' | 'demand';
 
 const Dashboard = () => {
   const [dataType, setDataType] = useState<DataType>('supply');
-  const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>(['electricity_generation']);
-  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(['solar', 'wind', 'gas', 'hydro']);
-  const [selectedDemandSectors, setSelectedDemandSectors] = useState<DemandSectorType[]>(['heat_pumps', 'electric_vehicles', 'industry']);
-  const [selectedFuels, setSelectedFuels] = useState<FuelType[]>(['electricity', 'hydrogen']);
+  const [selectedMetrics, setSelectedMetrics] = useState<Metric[]>([METRICS[0].key]);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>(TECHNOLOGIES.map(t => t.key));
+  const [selectedDemandSectors, setSelectedDemandSectors] = useState<DemandSectorType[]>(SECTORS.map(s => s.key));
+  const [selectedFuels, setSelectedFuels] = useState<FuelType[]>(FUELS.map(f => f.key));
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["energyData"],
