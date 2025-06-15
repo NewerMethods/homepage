@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Book, Rss, LayoutDashboard } from "lucide-react";
+import { Book, Rss } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
 import { sectionVariants } from "@/lib/variants";
 
@@ -12,7 +12,7 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         <FeatureCard
           icon={<Book size={32} />}
           title="My CV"
@@ -24,12 +24,6 @@ const FeaturesSection = () => {
           title="Substack"
           description="My thoughts on tech, development, and everything in between."
           href="/substack"
-        />
-        <FeatureCard
-          icon={<LayoutDashboard size={32} />}
-          title="Energy Dashboard"
-          description="A live dashboard visualizing UK's energy consumption and carbon intensity."
-          href="/dashboard"
         />
       </div>
     </motion.section>

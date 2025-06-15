@@ -1,6 +1,6 @@
 
 import FeatureCard from "@/components/FeatureCard";
-import { BookUser, Rss, LayoutDashboard, FileText } from "lucide-react";
+import { BookUser, Rss, FileText } from "lucide-react";
 
 const features = [
   {
@@ -14,12 +14,6 @@ const features = [
     title: "Substack",
     description: "Read my thoughts on technology, development, and more.",
     href: "/substack",
-  },
-  {
-    icon: <LayoutDashboard size={28} />,
-    title: "Dashboard",
-    description: "An interactive dashboard showcasing UK energy data.",
-    href: "/dashboard",
   },
   {
     icon: <FileText size={28} />,
@@ -36,7 +30,7 @@ const HomePageFeatures = () => {
       <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
         Here are some of the key sections of my personal site. Feel free to dive in.
       </p>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
           <FeatureCard
             key={feature.title}
@@ -52,4 +46,3 @@ const HomePageFeatures = () => {
 };
 
 export default HomePageFeatures;
-

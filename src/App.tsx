@@ -8,7 +8,6 @@ import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import CV from "./pages/CV";
 import Substack from "./pages/Substack";
-import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import Reports from "./pages/Reports";
 import ReportPage from "./pages/reports/ReportPage";
@@ -52,7 +51,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/substack" element={<Substack />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/reports/:reportSlug" element={<ReportPage />} />
           </Route>
