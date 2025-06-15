@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Store the path that the user tried to access.
+      sessionStorage.setItem('redirectPath', window.location.pathname);
+      // Redirect to the root of the application.
+      // IMPORTANT: Replace '/portfolio/' with your repository's base path.
+      window.location.replace('/portfolio/');
+    </script>
+  </head>
+  <body>
+    <p>If you are not being redirected, please <a href="/portfolio/">click here to go to the homepage</a>.</p>
+  </body>
+</html>
