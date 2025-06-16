@@ -1,10 +1,15 @@
-
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
 import remarkGfm from 'remark-gfm';
+import { Buffer } from 'buffer';
 import type { BlogPost, BlogListItem } from '@/types/blog';
 import type { ReportContentBlock } from '@/types/reports';
+
+// Polyfill Buffer for browser environment
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 // Configure remark processor
 const processor = remark()
