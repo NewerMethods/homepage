@@ -1,30 +1,31 @@
 
 import type { BlogPost, BlogListItem } from '@/types/blog';
+import { parseMarkdownFile, extractBlogListItem } from '@/lib/markdown';
 
-// Import JSON files directly
-import helloWorldJson from '@/data/blog/hello-world.json';
-import excitingNewTechJson from '@/data/blog/exciting-new-tech.json';
-import thoughtsOnRemoteWorkJson from '@/data/blog/thoughts-on-remote-work.json';
+// Import markdown files as raw text
+import helloWorldMd from '@/data/blog/hello-world.md?raw';
+import excitingNewTechMd from '@/data/blog/exciting-new-tech.md?raw';
+import thoughtsOnRemoteWorkMd from '@/data/blog/thoughts-on-remote-work.md?raw';
+import webDevelopmentTrendsMd from '@/data/blog/web-development-trends.md?raw';
+import buildingBetterApisMd from '@/data/blog/building-better-apis.md?raw';
 
-const blogPosts: Record<string, BlogPost> = {
-  'hello-world': helloWorldJson as BlogPost,
-  'exciting-new-tech': excitingNewTechJson as BlogPost,
-  'thoughts-on-remote-work': thoughtsOnRemoteWorkJson as BlogPost,
+const markdownFiles: Record<string, string> = {
+  'hello-world': helloWorldMd,
+  'exciting-new-tech': excitingNewTechMd,
+  'thoughts-on-remote-work': thoughtsOnRemoteWorkMd,
+  'web-development-trends': webDevelopmentTrendsMd,
+  'building-better-apis': buildingBetterApisMd,
 };
 
 export const fetchBlogList = async (): Promise<BlogListItem[]> => {
   const blogList: BlogListItem[] = [];
   
-  for (const [slug, post] of Object.entries(blogPosts)) {
+  for (const [slug, content] of Object.entries(markdownFiles)) {
     try {
-      blogList.push({
-        slug: post.slug,
-        title: post.title,
-        description: post.description,
-        date: post.date
-      });
+      const listItem = extractBlogListItem(content);
+      blogList.push(listItem);
     } catch (error) {
-      console.error(`Error processing blog list item for ${slug}:`, error);
+      console.error(`Error parsing blog list item for ${slug}:`, error);
     }
   }
   
@@ -32,11 +33,17 @@ export const fetchBlogList = async (): Promise<BlogListItem[]> => {
 };
 
 export const fetchBlogPost = async (slug: string): Promise<BlogPost> => {
-  const post = blogPosts[slug];
+  const markdownContent = markdownFiles[slug];
   
-  if (!post) {
+  if (!markdownContent) {
     throw new Error(`Blog post with slug "${slug}" not found.`);
   }
   
-  return post;
+  try {
+    const post = await parseMarkdownFile(markdownContent);
+    return post;
+  } catch (error) {
+    console.error(`Error parsing blog post ${slug}:`, error);
+    throw new Error(`Failed to parse blog post "${slug}".`);
+  }
 };
