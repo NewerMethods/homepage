@@ -1,49 +1,26 @@
 
 import type { BlogPost, BlogListItem } from '@/types/blog';
-import { parseMarkdownFile, extractBlogListItem } from '@/lib/markdown';
 
-// Import markdown files as raw text
-import helloWorldMd from '@/data/blog/hello-world.md?raw';
-import excitingNewTechMd from '@/data/blog/exciting-new-tech.md?raw';
-import thoughtsOnRemoteWorkMd from '@/data/blog/thoughts-on-remote-work.md?raw';
-import webDevelopmentTrendsMd from '@/data/blog/web-development-trends.md?raw';
-import buildingBetterApisMd from '@/data/blog/building-better-apis.md?raw';
+// Import JSON data
+import blogList from '@/data/blog/blog-list.json';
+import post1 from '@/data/blog/hello-world.json';
+import post2 from '@/data/blog/exciting-new-tech.json';
+import post3 from '@/data/blog/thoughts-on-remote-work.json';
 
-const markdownFiles: Record<string, string> = {
-  'hello-world': helloWorldMd,
-  'exciting-new-tech': excitingNewTechMd,
-  'thoughts-on-remote-work': thoughtsOnRemoteWorkMd,
-  'web-development-trends': webDevelopmentTrendsMd,
-  'building-better-apis': buildingBetterApisMd,
+const posts: Record<string, BlogPost> = {
+  'hello-world': post1 as BlogPost,
+  'exciting-new-tech': post2 as BlogPost,
+  'thoughts-on-remote-work': post3 as BlogPost,
 };
 
 export const fetchBlogList = async (): Promise<BlogListItem[]> => {
-  const blogList: BlogListItem[] = [];
-  
-  for (const [slug, content] of Object.entries(markdownFiles)) {
-    try {
-      const listItem = extractBlogListItem(content);
-      blogList.push(listItem);
-    } catch (error) {
-      console.error(`Error parsing blog list item for ${slug}:`, error);
-    }
-  }
-  
-  return blogList;
+  return Promise.resolve(blogList as BlogListItem[]);
 };
 
 export const fetchBlogPost = async (slug: string): Promise<BlogPost> => {
-  const markdownContent = markdownFiles[slug];
-  
-  if (!markdownContent) {
-    throw new Error(`Blog post with slug "${slug}" not found.`);
+  const post = posts[slug];
+  if (post) {
+    return Promise.resolve(post);
   }
-  
-  try {
-    const post = await parseMarkdownFile(markdownContent);
-    return post;
-  } catch (error) {
-    console.error(`Error parsing blog post ${slug}:`, error);
-    throw new Error(`Failed to parse blog post "${slug}".`);
-  }
+  return Promise.reject(new Error(`Blog post with slug "${slug}" not found.`));
 };
